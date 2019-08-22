@@ -12,7 +12,7 @@ struct NoteListRow: View {
     
     // MARK: Properties
     
-    private let note: NoteViewModel
+    let note: NoteViewModel
     
     // MARK: Body
     
@@ -37,11 +37,5 @@ struct NoteListRow: View {
             Spacer()
         }
         .padding()
-    }
-    
-    // MARK: Initializers
-    
-    init(note: NoteViewModel) {
-        self.note = note
     }
 }
