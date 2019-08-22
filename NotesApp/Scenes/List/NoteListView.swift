@@ -14,16 +14,12 @@ struct NoteListView: View {
     
     var body: some View {
         NavigationView {
-            List(NoteViewModel.all) {
-                self.declareNavigationToEditNote(for: NoteListRow(note: $0))
+            List(NoteViewModel.all) { note in
+                NavigationLink(destination: NoteEditView(note: note)) {
+                    NoteListRow(note: note)
+                }
             }
             .navigationBarTitle(Constants.title)
         }
-    }
-    
-    // MARK: Actions
-    
-    private func declareNavigationToEditNote<RowView: View>(for view: RowView) -> some View {
-        NavigationLink(destination: NoteEditView()) { view }
     }
 }

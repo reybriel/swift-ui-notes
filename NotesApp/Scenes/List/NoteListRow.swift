@@ -17,8 +17,8 @@ struct NoteListRow: View {
     // MARK: Body
     
     var body: some View {
-        self.declareContentWrapperView(
-            for: VStack(alignment: .leading) {
+        HStack {
+            VStack(alignment: .leading) {
                 Text(note.title)
                 Spacer()
                 Text(note.content)
@@ -26,15 +26,6 @@ struct NoteListRow: View {
                     .foregroundColor(.gray)
                     .lineLimit(Constants.lineLimit)
             }
-        )
-    }
-    
-    // MARK: Wrapper Views
-    
-    private func declareContentWrapperView<ContentView: View>(for view: ContentView) -> some View {
-        HStack {
-            view
-            Spacer()
         }
         .padding()
     }
