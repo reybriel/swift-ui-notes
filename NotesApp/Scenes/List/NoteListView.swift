@@ -4,11 +4,17 @@ import SwiftUI
 
 private enum Constants {
     static let title: String = "Notes"
+    static let newNoteItemTitle: String = "Add"
 }
 
 // MARK: - List View
 
 struct NoteListView: View {
+    
+    // MARK: Properties
+    
+    @State
+    private var isShowingNoteTitleView: Bool = false
     
     // MARK: Body
     
@@ -20,6 +26,16 @@ struct NoteListView: View {
                 }
             }
             .navigationBarTitle(Constants.title)
+            .navigationBarItems(
+                trailing: Button(
+                    action: toggleShowingTitleView,
+                    label: { Text(Constants.newNoteItemTitle) }
+                )
+            ).sheet(isPresented: $isShowingNoteTitleView) { NoteTitleView() }
         }
+    }
+    
+    private func toggleShowingTitleView() {
+        isShowingNoteTitleView.toggle()
     }
 }
