@@ -31,7 +31,12 @@ struct NoteListView: View {
                     action: toggleShowingTitleView,
                     label: { Text(Constants.newNoteItemTitle) }
                 )
-            ).sheet(isPresented: $isShowingNoteTitleView) { NoteTitleView() }
+            ).sheet(isPresented: $isShowingNoteTitleView) {
+                NoteTitleView { title in
+                    self.toggleShowingTitleView()
+                    print(title)
+                }
+            }
         }
     }
     
