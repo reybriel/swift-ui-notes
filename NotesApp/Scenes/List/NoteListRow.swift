@@ -27,6 +27,7 @@ struct NoteListRow: View {
                     .lineLimit(Constants.lineLimit)
             }
         }
+        .frame(maxWidth: .infinity, alignment: .topLeading)
         .padding()
     }
 }
