@@ -18,12 +18,6 @@ struct NoteTitleView: View {
     private var title: String = ""
     var onUserProvidedTitle: (String) -> Void
     
-    private var extractedTitle: String {
-        let title = self.title
-        self.title = ""
-        return title
-    }
-    
     private var textFieldStyle: some TextFieldStyle {
         RoundedBorderTextFieldStyle()
     }
@@ -42,7 +36,9 @@ struct NoteTitleView: View {
     }
     
     private func onTextFieldCommit() {
-        onUserProvidedTitle(extractedTitle)
+        let title = self.title
+        self.title = ""
+        onUserProvidedTitle(title)
     }
 }
 
