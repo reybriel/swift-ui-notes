@@ -16,8 +16,8 @@ struct NoteListView: View {
     @State
     private var isShowingNoteTitleView: Bool = false
 
-    private var rightBarButton: Button<Text> {
-        Button(action: toggleShowingTitleView, label: { Text(Constants.newNoteItemTitle) })
+    private var rightBarButton: BarButton<Text> {
+        BarButton(action: toggleShowingTitleView, label: Text(Constants.newNoteItemTitle))
     }
 
     // MARK: Body
