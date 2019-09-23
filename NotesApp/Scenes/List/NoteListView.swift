@@ -29,7 +29,8 @@ struct NoteListView: View {
                     NoteListRow(note: note)
                 }
             }
-            .padding()
+            .padding(.leading)
+            .padding(.trailing)
             .navigationBarTitle(Constants.title)
             .navigationBarItems(trailing: rightBarButton)
             .sheet(isPresented: $isShowingNoteTitleView) {
