@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		160E5E872313F9C7008B2CBC /* NoteTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160E5E862313F9C7008B2CBC /* NoteTitleView.swift */; };
+		1631270F2338DB5800791370 /* CustomList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1631270E2338DB5800791370 /* CustomList.swift */; };
 		1655B55D23058C850030A0C3 /* NoteListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1655B55C23058C850030A0C3 /* NoteListRow.swift */; };
 		16622B442306CCDF00E117F4 /* NoteEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16622B432306CCDF00E117F4 /* NoteEditView.swift */; };
 		16BD067323047FE1009F24A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BD067223047FE1009F24A2 /* AppDelegate.swift */; };
@@ -21,6 +22,7 @@
 
 /* Begin PBXFileReference section */
 		160E5E862313F9C7008B2CBC /* NoteTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTitleView.swift; sourceTree = "<group>"; };
+		1631270E2338DB5800791370 /* CustomList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomList.swift; sourceTree = "<group>"; };
 		1655B55C23058C850030A0C3 /* NoteListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteListRow.swift; sourceTree = "<group>"; };
 		16622B432306CCDF00E117F4 /* NoteEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteEditView.swift; sourceTree = "<group>"; };
 		16BD066F23047FE1009F24A2 /* NotesApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NotesApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -45,6 +47,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1631270C2338DB2900791370 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				1631270D2338DB4100791370 /* View */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		1631270D2338DB4100791370 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1631270E2338DB5800791370 /* CustomList.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		1655B55E23059B7E0030A0C3 /* App */ = {
 			isa = PBXGroup;
 			children = (
@@ -114,6 +132,7 @@
 				16BD067A23047FE3009F24A2 /* Preview Content */,
 				1655B55E23059B7E0030A0C3 /* App */,
 				1655B56323059BE80030A0C3 /* Model */,
+				1631270C2338DB2900791370 /* Common */,
 				1655B56123059BA70030A0C3 /* Scenes */,
 			);
 			path = NotesApp;
@@ -200,6 +219,7 @@
 			files = (
 				1655B55D23058C850030A0C3 /* NoteListRow.swift in Sources */,
 				16BD067323047FE1009F24A2 /* AppDelegate.swift in Sources */,
+				1631270F2338DB5800791370 /* CustomList.swift in Sources */,
 				16BD067523047FE1009F24A2 /* SceneDelegate.swift in Sources */,
 				16BD067723047FE1009F24A2 /* NoteListView.swift in Sources */,
 				16622B442306CCDF00E117F4 /* NoteEditView.swift in Sources */,

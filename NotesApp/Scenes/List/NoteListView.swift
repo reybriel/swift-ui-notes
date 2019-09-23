@@ -20,16 +20,11 @@ struct NoteListView: View {
     
     var body: some View {
         NavigationView {
-            ScrollView {
-                VStack(alignment: .leading) {
-                    ForEach(NoteViewModel.all) { note in
-                        NavigationLink(destination: NoteEditView(note: note)) {
-                            NoteListRow(note: note)
-                        }
-                    }
+            CustomList(items: NoteViewModel.all) { note in
+                NavigationLink(destination: NoteEditView(note: note)) {
+                    NoteListRow(note: note)
                 }
             }
-            .frame(maxWidth: .infinity, alignment: .topLeading)
             .navigationBarTitle(Constants.title)
             .navigationBarItems(
                 trailing: Button(
