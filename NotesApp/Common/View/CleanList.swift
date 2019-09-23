@@ -12,6 +12,8 @@ struct CleanList<ElementView, Element>: View where ElementView: View, Element: I
                     self.forEach(item)
                 }
             }
+            .padding(.leading)
+            .padding(.trailing)
         }
         .frame(maxWidth: .infinity, alignment: .topLeading)
     }

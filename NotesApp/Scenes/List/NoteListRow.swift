@@ -15,12 +15,6 @@ struct NoteListRow: View {
     // MARK: Properties
     
     let note: NoteViewModel
-
-    private var borderOverlay: some View {
-        RoundedRectangle(cornerRadius: Constants.cornerRadius)
-            .stroke(Color.gray)
-            .opacity(Constants.borderOpacity)
-    }
     
     // MARK: Body
     
@@ -39,6 +33,8 @@ struct NoteListRow: View {
         }
         .frame(maxWidth: .infinity, alignment: .topLeading)
         .padding()
-        .overlay(borderOverlay)
+        .background(Color.listRowBackground)
+        .cornerRadius(Constants.cornerRadius)
+        .shadow(radius: 1.0)
     }
 }
