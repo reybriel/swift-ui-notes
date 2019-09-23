@@ -15,7 +15,11 @@ struct NoteListView: View {
     
     @State
     private var isShowingNoteTitleView: Bool = false
-    
+
+    private var rightBarButton: Button<Text> {
+        Button(action: toggleShowingTitleView, label: { Text(Constants.newNoteItemTitle) })
+    }
+
     // MARK: Body
     
     var body: some View {
@@ -26,12 +30,8 @@ struct NoteListView: View {
                 }
             }
             .navigationBarTitle(Constants.title)
-            .navigationBarItems(
-                trailing: Button(
-                    action: toggleShowingTitleView,
-                    label: { Text(Constants.newNoteItemTitle) }
-                )
-            ).sheet(isPresented: $isShowingNoteTitleView) {
+            .navigationBarItems(trailing: rightBarButton)
+            .sheet(isPresented: $isShowingNoteTitleView) {
                 NoteTitleView { title in
                     self.toggleShowingTitleView()
                     print(title)
