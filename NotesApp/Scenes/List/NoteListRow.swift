@@ -20,6 +20,8 @@ struct NoteListRow: View {
         HStack {
             VStack(alignment: .leading) {
                 Text(note.title)
+                    .font(.headline)
+                    .foregroundColor(.black)
                 Spacer()
                 Text(note.content)
                     .font(.subheadline)
