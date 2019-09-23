@@ -12,6 +12,7 @@
 		163127112338E28F00791370 /* BarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163127102338E28F00791370 /* BarButton.swift */; };
 		1655B55D23058C850030A0C3 /* NoteListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1655B55C23058C850030A0C3 /* NoteListRow.swift */; };
 		16622B442306CCDF00E117F4 /* NoteEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16622B432306CCDF00E117F4 /* NoteEditView.swift */; };
+		168B00AE2338FCB300F46D8F /* Color+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168B00AD2338FCB300F46D8F /* Color+Custom.swift */; };
 		16BD067323047FE1009F24A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BD067223047FE1009F24A2 /* AppDelegate.swift */; };
 		16BD067523047FE1009F24A2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BD067423047FE1009F24A2 /* SceneDelegate.swift */; };
 		16BD067723047FE1009F24A2 /* NoteListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BD067623047FE1009F24A2 /* NoteListView.swift */; };
@@ -27,6 +28,7 @@
 		163127102338E28F00791370 /* BarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarButton.swift; sourceTree = "<group>"; };
 		1655B55C23058C850030A0C3 /* NoteListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteListRow.swift; sourceTree = "<group>"; };
 		16622B432306CCDF00E117F4 /* NoteEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteEditView.swift; sourceTree = "<group>"; };
+		168B00AD2338FCB300F46D8F /* Color+Custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Custom.swift"; sourceTree = "<group>"; };
 		16BD066F23047FE1009F24A2 /* NotesApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NotesApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		16BD067223047FE1009F24A2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		16BD067423047FE1009F24A2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -52,6 +54,7 @@
 		1631270C2338DB2900791370 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				168B00AC2338FCA600F46D8F /* Extensions */,
 				1631270D2338DB4100791370 /* View */,
 			);
 			path = Common;
@@ -110,6 +113,14 @@
 				16622B432306CCDF00E117F4 /* NoteEditView.swift */,
 			);
 			path = Edit;
+			sourceTree = "<group>";
+		};
+		168B00AC2338FCA600F46D8F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				168B00AD2338FCB300F46D8F /* Color+Custom.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		16BD066623047FE1009F24A2 = {
@@ -220,6 +231,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				168B00AE2338FCB300F46D8F /* Color+Custom.swift in Sources */,
 				163127112338E28F00791370 /* BarButton.swift in Sources */,
 				1655B55D23058C850030A0C3 /* NoteListRow.swift in Sources */,
 				16BD067323047FE1009F24A2 /* AppDelegate.swift in Sources */,

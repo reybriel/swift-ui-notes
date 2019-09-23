@@ -29,7 +29,7 @@ struct NoteListRow: View {
             VStack(alignment: .leading) {
                 Text(note.title)
                     .font(.headline)
-                    .foregroundColor(Color("HeadlineColor"))
+                    .foregroundColor(.headline)
                 Spacer()
                 Text(note.content)
                     .font(.subheadline)
