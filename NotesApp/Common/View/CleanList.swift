@@ -1,5 +1,5 @@
 //
-//  CustomList.swift
+//  CleanList.swift
 //  NotesApp
 //
 //  Created by gabriel.n.reynoso on 23/09/19.
@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct CustomList<ElementView, Element>: View where ElementView: View, Element: Identifiable {
+struct CleanList<ElementView, Element>: View where ElementView: View, Element: Identifiable {
 
     let items: [Element]
     let forEach: (Element) -> ElementView

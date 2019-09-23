@@ -24,7 +24,7 @@ struct NoteListView: View {
     
     var body: some View {
         NavigationView {
-            CustomList(items: NoteViewModel.all) { note in
+            CleanList(items: NoteViewModel.all) { note in
                 NavigationLink(destination: NoteEditView(note: note)) {
                     NoteListRow(note: note)
                 }
