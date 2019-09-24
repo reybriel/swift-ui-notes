@@ -35,6 +35,6 @@ struct NoteListRow: View {
         .padding()
         .background(Color.major)
         .cornerRadius(Constants.cornerRadius)
-        .shadow(radius: 1.0)
+        .shadow(radius: 1.0, x: -1, y: 1)
     }
 }
