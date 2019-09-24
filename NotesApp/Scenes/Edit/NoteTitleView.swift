@@ -4,7 +4,6 @@ import SwiftUI
 
 private enum Constants {
     static let newTitleMessage: String = "Add a title for your note"
-    static let fieldPlaceholder: String = "Shopping list"
     static let textFieldInsets: EdgeInsets = .init(top: 0, leading: 30, bottom: 0, trailing: 30)
     static let emptyTitleMessage: String = ""
 }
@@ -24,7 +23,7 @@ struct NoteTitleView: View {
         VStack {
             Text(Constants.newTitleMessage)
                 .padding()
-            TextField(Constants.fieldPlaceholder, text: $viewModel.title, onCommit: onTextFieldCommit)
+            TextField("", text: $viewModel.title, onCommit: onTextFieldCommit)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
                 .padding(Constants.textFieldInsets)
                 .multilineTextAlignment(.center)
