@@ -33,7 +33,7 @@ struct NoteListRow: View {
         }
         .frame(maxWidth: .infinity, alignment: .topLeading)
         .padding()
-        .background(Color.listRowBackground)
+        .background(Color.major)
         .cornerRadius(Constants.cornerRadius)
         .shadow(radius: 1.0)
     }

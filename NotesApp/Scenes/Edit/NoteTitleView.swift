@@ -34,7 +34,7 @@ struct NoteTitleView: View {
                 .multilineTextAlignment(.center)
         }
         .frame(maxHeight: .infinity)
-        .background(Color.listRowBackground)
+        .background(Color.major)
     }
     
     private func onTextFieldCommit() {
