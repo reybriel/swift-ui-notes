@@ -33,6 +33,8 @@ struct NoteTitleView: View {
                 .padding(Constants.textFieldInsets)
                 .multilineTextAlignment(.center)
         }
+        .frame(maxHeight: .infinity)
+        .background(Color.listRowBackground)
     }
     
     private func onTextFieldCommit() {
