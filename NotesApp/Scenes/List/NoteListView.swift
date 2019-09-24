@@ -16,10 +16,6 @@ struct NoteListView: View {
     @State
     private var isShowingNoteTitleView: Bool = false
 
-    private var rightBarButton: BarButton<Text> {
-        BarButton(action: toggleShowingTitleView, label: Text(Constants.newNoteItemTitle))
-    }
-
     // MARK: Body
     
     var body: some View {
@@ -38,6 +34,10 @@ struct NoteListView: View {
                 }
             }
         }
+    }
+
+    private var rightBarButton: BarButton<Text> {
+        BarButton(action: toggleShowingTitleView, label: Text(Constants.newNoteItemTitle))
     }
     
     private func toggleShowingTitleView() {
