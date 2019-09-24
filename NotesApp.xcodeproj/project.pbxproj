@@ -115,10 +115,17 @@
 			children = (
 				160E5E862313F9C7008B2CBC /* NoteTitleView.swift */,
 				166ACF7A233A6FB80098323F /* NoteTitleViewModel.swift */,
-				166ACF7C233A731F0098323F /* CreateNoteWithTitleUseCase.swift */,
 				16622B432306CCDF00E117F4 /* NoteEditView.swift */,
 			);
 			path = Edit;
+			sourceTree = "<group>";
+		};
+		166ACF7E233A77200098323F /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+				166ACF7C233A731F0098323F /* CreateNoteWithTitleUseCase.swift */,
+			);
+			path = UseCase;
 			sourceTree = "<group>";
 		};
 		168B00AC2338FCA600F46D8F /* Extensions */ = {
@@ -154,6 +161,7 @@
 				1655B56323059BE80030A0C3 /* Model */,
 				1631270C2338DB2900791370 /* Common */,
 				1655B56123059BA70030A0C3 /* Scenes */,
+				166ACF7E233A77200098323F /* UseCase */,
 			);
 			path = NotesApp;
 			sourceTree = "<group>";
