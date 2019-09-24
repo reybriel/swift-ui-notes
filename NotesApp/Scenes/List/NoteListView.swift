@@ -28,10 +28,7 @@ struct NoteListView: View {
             .navigationBarTitle(Constants.title)
             .navigationBarItems(trailing: rightBarButton)
             .sheet(isPresented: $isShowingNoteTitleView) {
-                NoteTitleView { title in
-                    self.toggleShowingTitleView()
-                    print(title)
-                }
+                NoteTitleView()
             }
         }
     }

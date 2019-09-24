@@ -13,10 +13,9 @@ private enum Constants {
 struct NoteTitleView: View {
     
     // MARK: Properties
-    
-    @State
-    private var title: String = ""
-    var onUserProvidedTitle: (String) -> Void
+
+    @ObservedObject
+    private var viewModel: NoteTitleViewModel = .init()
     
     private var textFieldStyle: some TextFieldStyle {
         RoundedBorderTextFieldStyle()
@@ -28,7 +27,7 @@ struct NoteTitleView: View {
         VStack {
             Text(Constants.newTitleMessage)
                 .padding()
-            TextField(Constants.fieldPlaceholder, text: $title, onCommit: onTextFieldCommit)
+            TextField(Constants.fieldPlaceholder, text: $viewModel.title)
                 .textFieldStyle(textFieldStyle)
                 .padding(Constants.textFieldInsets)
                 .multilineTextAlignment(.center)
@@ -36,11 +35,4 @@ struct NoteTitleView: View {
         .frame(maxHeight: .infinity)
         .background(Color.major)
     }
-    
-    private func onTextFieldCommit() {
-        let title = self.title
-        self.title = ""
-        onUserProvidedTitle(title)
-    }
 }
-
