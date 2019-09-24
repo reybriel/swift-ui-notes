@@ -33,8 +33,8 @@ struct NoteListView: View {
         }
     }
 
-    private var rightBarButton: BarButton<Text> {
-        BarButton(action: toggleShowingTitleView, label: Text(Constants.newNoteItemTitle))
+    private var rightBarButton: Button<Text> {
+        Button<Text>(Constants.newNoteItemTitle, action: toggleShowingTitleView)
     }
     
     private func toggleShowingTitleView() {
