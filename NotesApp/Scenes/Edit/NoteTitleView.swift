@@ -17,10 +17,6 @@ struct NoteTitleView: View {
     @ObservedObject
     private var viewModel: NoteTitleViewModel = .init()
     
-    private var textFieldStyle: some TextFieldStyle {
-        RoundedBorderTextFieldStyle()
-    }
-    
     // MARK: Body
     
     var body: some View {
@@ -28,7 +24,7 @@ struct NoteTitleView: View {
             Text(Constants.newTitleMessage)
                 .padding()
             TextField(Constants.fieldPlaceholder, text: $viewModel.title)
-                .textFieldStyle(textFieldStyle)
+                .textFieldStyle(RoundedBorderTextFieldStyle())
                 .padding(Constants.textFieldInsets)
                 .multilineTextAlignment(.center)
         }
