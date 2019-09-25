@@ -18,10 +18,6 @@ struct NoteListView: View {
     }
 
     private var rightBarButton: Button<Text> {
-        Button<Text>(Strings.NoteList.rightBarButton, action: toggleShowingTitleView)
-    }
-    
-    private func toggleShowingTitleView() {
-        viewModel.isShowingNoteCreationView.toggle()
+        Button<Text>(Strings.NoteList.rightBarButton, action: viewModel.toggleShowingCreationView)
     }
 }

@@ -3,9 +3,9 @@ import Combine
 
 final class NoteCreateViewModel: ObservableObject {
     @Published var title: String = ""
-    @Published var shouldShowAlert: Bool = false
+    @Published var isShowingAlert: Bool = false
     private var alertFeedback: AlertFeedback = .empty
-    var isPresented: Binding<Bool>
+    private var isPresented: Binding<Bool>
 
     init(isPresented: Binding<Bool>) {
         self.isPresented = isPresented
@@ -18,6 +18,11 @@ final class NoteCreateViewModel: ObservableObject {
     var alertMessage: String {
         alertFeedback.message
     }
+
+    func onTextFieldCommit() {
+        CreateNoteWithTitleUseCaseFactory.make(title: title, presenter: self,
+                                               gateway: NotesDAO.shared).run()
+    }
 }
 
 extension NoteCreateViewModel: CreateNoteWithTitleUseCasePresenter {
@@ -29,6 +34,6 @@ extension NoteCreateViewModel: CreateNoteWithTitleUseCasePresenter {
     
     func show(feedback: AlertFeedback) {
         alertFeedback = feedback
-        shouldShowAlert = true
+        isShowingAlert = true
     }
 }

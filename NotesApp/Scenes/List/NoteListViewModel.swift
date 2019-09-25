@@ -8,6 +8,10 @@ final class NoteListViewModel: ObservableObject {
         GetAllNotesUseCaseFactory.make(presenter: self).run()
         SubscribeToNoteChangesUseCaseFactory.make(presenter: self).run()
     }
+
+    func toggleShowingCreationView() {
+        isShowingNoteCreationView.toggle()
+    }
 }
 
 extension NoteListViewModel: GetAllNotesUseCasePresenter {
