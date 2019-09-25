@@ -5,7 +5,6 @@ protocol CreateNoteWithTitleGateway: AnyObject {
 }
 
 extension NotesDAO: CreateNoteWithTitleGateway {
-
     func createSaveUpstream(noteTitle: String) -> Future<Void, Error> {
         Future { completion in
             self.saveNote(with: noteTitle, completion: completion)

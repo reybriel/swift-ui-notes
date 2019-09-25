@@ -1,22 +1,12 @@
 import SwiftUI
 
-// MARK: - Constants
-
 private enum Constants {
     static let textFieldInsets: EdgeInsets = .init(top: 0, leading: 30, bottom: 0, trailing: 30)
 }
 
-// MARK: - Title View
-
 struct NoteCreateView: View {
-    
-    // MARK: Properties
-
-    @ObservedObject
-    var viewModel: NoteCreateViewModel
+    @ObservedObject var viewModel: NoteCreateViewModel
     let createNoteWithTitleGateway: CreateNoteWithTitleGateway
-    
-    // MARK: Body
     
     var body: some View {
         VStack {

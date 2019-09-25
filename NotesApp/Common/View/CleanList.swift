@@ -1,7 +1,6 @@
 import SwiftUI
 
 struct CleanList<ElementView, Element>: View where ElementView: View, Element: Identifiable {
-
     let items: [Element]
     let forEach: (Element) -> ElementView
 

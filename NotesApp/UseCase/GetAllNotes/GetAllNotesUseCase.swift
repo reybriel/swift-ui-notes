@@ -4,7 +4,6 @@ import Combine
 typealias GetAllNotesUseCasePresenter = CanListNotes & CanShowAlertFeedback
 
 struct GetAllNotesUseCase: CanRun {
-
     let gateway: GetAllNotesGateway
     unowned let presenter: GetAllNotesUseCasePresenter & AnyObject
 

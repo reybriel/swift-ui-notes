@@ -1,15 +1,7 @@
 import SwiftUI
 
-// MARK: - List View
-
 struct NoteListView: View {
-    
-    // MARK: Properties
-
-    @ObservedObject
-    var viewModel: NoteListViewModel
-
-    // MARK: Body
+    @ObservedObject var viewModel: NoteListViewModel
     
     var body: some View {
         NavigationView {

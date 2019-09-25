@@ -5,7 +5,6 @@ protocol GetAllNotesGateway: AnyObject {
 }
 
 extension NotesDAO: GetAllNotesGateway {
-
     func createRequestUpstream() -> Future<[Note], Error> {
         Future { completion in
             self.getAllNotes(completion: completion)
