@@ -14,9 +14,7 @@ struct NoteListView: View {
             .navigationBarItems(trailing: rightBarButton)
             .createNote($viewModel.isShowingNoteCreationView)
         }
-        .onAppear {
-            GetAllNotesUseCaseFactory.make(presenter: self.viewModel).run()
-        }
+        .onAppear(perform: viewModel.onAppear)
     }
 
     private var rightBarButton: Button<Text> {

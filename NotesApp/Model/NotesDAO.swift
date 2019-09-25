@@ -20,6 +20,10 @@ extension Note {
 }
 
 final class NotesDAO {
+    static let shared: NotesDAO = .init()
+
+    let didChange: PassthroughSubject<Void, Never> = .init()
+
     private let persistentContainer: NSPersistentContainer = {
         let container: NSPersistentContainer = .init(name: "NotesModel")
         container.loadPersistentStores { _, _ in }
@@ -36,6 +40,7 @@ final class NotesDAO {
                 note.createManagedObject(at: self.context)
                 try self.context.save()
                 completion(.success(()))
+                self.didChange.send(())
             } catch {
                 completion(.failure(error))
             }
