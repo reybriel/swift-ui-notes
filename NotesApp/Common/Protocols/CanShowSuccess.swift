@@ -1,0 +1,3 @@
+protocol CanShowSuccess {
+    func showSuccess()
+}

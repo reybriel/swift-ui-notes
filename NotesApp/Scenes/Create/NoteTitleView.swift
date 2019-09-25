@@ -31,11 +31,12 @@ struct NoteTitleView: View {
         .frame(maxHeight: .infinity)
         .background(Color.major)
         .alert(isPresented: $viewModel.shouldShowAlert) { () -> Alert in
-            Alert(title: Text(viewModel.alertMessage))
+            Alert(title: Text(viewModel.alertFeedback.title),
+                  message: Text(viewModel.alertFeedback.message))
         }
     }
 
     private func onTextFieldCommit() {
-        CreateNoteWithTitleUseCase(viewModel: viewModel).run()
+        CreateNoteWithTitleUseCase(title: viewModel.title, presenter: viewModel).run()
     }
 }

@@ -21,6 +21,9 @@
 		16BD067C23047FE3009F24A2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16BD067B23047FE3009F24A2 /* Preview Assets.xcassets */; };
 		16BD067F23047FE3009F24A2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16BD067D23047FE3009F24A2 /* LaunchScreen.storyboard */; };
 		16BD06872304829D009F24A2 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BD06862304829D009F24A2 /* Note.swift */; };
+		30D81C8A233AF28A00FBF978 /* CanShowMessageCanShowMessageWithTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D81C89233AF28A00FBF978 /* CanShowMessageCanShowMessageWithTitle.swift */; };
+		30D81C8C233AF2B400FBF978 /* CanShowSuccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D81C8B233AF2B400FBF978 /* CanShowSuccess.swift */; };
+		30D81C8F233AF5BF00FBF978 /* AlertFeedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D81C8E233AF5BF00FBF978 /* AlertFeedback.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +43,9 @@
 		16BD067E23047FE3009F24A2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		16BD068023047FE3009F24A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		16BD06862304829D009F24A2 /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
+		30D81C89233AF28A00FBF978 /* CanShowMessageCanShowMessageWithTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanShowMessageCanShowMessageWithTitle.swift; sourceTree = "<group>"; };
+		30D81C8B233AF2B400FBF978 /* CanShowSuccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanShowSuccess.swift; sourceTree = "<group>"; };
+		30D81C8E233AF5BF00FBF978 /* AlertFeedback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertFeedback.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +62,8 @@
 		1631270C2338DB2900791370 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				30D81C8D233AF5A100FBF978 /* Utils */,
+				30D81C88233AF27900FBF978 /* Protocols */,
 				168B00AC2338FCA600F46D8F /* Extensions */,
 				1631270D2338DB4100791370 /* View */,
 			);
@@ -85,6 +93,7 @@
 			isa = PBXGroup;
 			children = (
 				1655B56223059BC20030A0C3 /* List */,
+				30D81C90233AF6E300FBF978 /* Create */,
 				16622B422306CCBE00E117F4 /* Edit */,
 			);
 			path = Scenes;
@@ -110,8 +119,6 @@
 		16622B422306CCBE00E117F4 /* Edit */ = {
 			isa = PBXGroup;
 			children = (
-				160E5E862313F9C7008B2CBC /* NoteTitleView.swift */,
-				166ACF7A233A6FB80098323F /* NoteTitleViewModel.swift */,
 				16622B432306CCDF00E117F4 /* NoteEditView.swift */,
 			);
 			path = Edit;
@@ -169,6 +176,32 @@
 				16BD067B23047FE3009F24A2 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		30D81C88233AF27900FBF978 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				30D81C89233AF28A00FBF978 /* CanShowMessageCanShowMessageWithTitle.swift */,
+				30D81C8B233AF2B400FBF978 /* CanShowSuccess.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		30D81C8D233AF5A100FBF978 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				30D81C8E233AF5BF00FBF978 /* AlertFeedback.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		30D81C90233AF6E300FBF978 /* Create */ = {
+			isa = PBXGroup;
+			children = (
+				160E5E862313F9C7008B2CBC /* NoteTitleView.swift */,
+				166ACF7A233A6FB80098323F /* NoteTitleViewModel.swift */,
+			);
+			path = Create;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -245,6 +278,9 @@
 				168B00AE2338FCB300F46D8F /* Color+Custom.swift in Sources */,
 				1655B55D23058C850030A0C3 /* NoteListRow.swift in Sources */,
 				16BD067323047FE1009F24A2 /* AppDelegate.swift in Sources */,
+				30D81C8F233AF5BF00FBF978 /* AlertFeedback.swift in Sources */,
+				30D81C8C233AF2B400FBF978 /* CanShowSuccess.swift in Sources */,
+				30D81C8A233AF28A00FBF978 /* CanShowMessageCanShowMessageWithTitle.swift in Sources */,
 				166ACF7D233A731F0098323F /* CreateNoteWithTitleUseCase.swift in Sources */,
 				1631270F2338DB5800791370 /* CleanList.swift in Sources */,
 				166ACF7B233A6FB80098323F /* NoteTitleViewModel.swift in Sources */,

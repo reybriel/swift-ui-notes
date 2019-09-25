@@ -1,12 +1,16 @@
 import Combine
 
+typealias CreateNoteWithTitleUseCasePresenter = CanShowSuccess & CanShowAlertFeedback
+
 struct CreateNoteWithTitleUseCase {
-    let viewModel: NoteTitleViewModel
+    let title: String
+    unowned let presenter: CreateNoteWithTitleUseCasePresenter & AnyObject
 
     func run() {
-        if viewModel.title.isEmpty {
-            viewModel.alertMessage = "The title is empty!"
-            viewModel.shouldShowAlert = true
+        if title.isEmpty {
+            presenter.show(feedback: .attemptToCreateNoteWithoutTitle)
+        } else {
+            presenter.showSuccess()
         }
     }
 }
