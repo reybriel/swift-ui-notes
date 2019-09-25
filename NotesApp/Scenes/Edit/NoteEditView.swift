@@ -1,11 +1,5 @@
 import SwiftUI
 
-// MARK: - Constants
-
-private enum Constants {
-    static let newNoteTitle: String = "New Note"
-}
-
 // MARK: - Edit View
 
 struct NoteEditView: View {
@@ -13,10 +7,10 @@ struct NoteEditView: View {
     // MARK: Properties
     
     private var title: Text {
-        Text(note?.title ?? Constants.newNoteTitle)
+        Text(note.title)
     }
     
-    let note: NoteViewModel?
+    let note: NoteViewModel
     
     // MARK:Body
     

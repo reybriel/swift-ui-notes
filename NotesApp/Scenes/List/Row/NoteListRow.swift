@@ -25,7 +25,7 @@ struct NoteListRow: View {
                     .font(.headline)
                     .foregroundColor(.headline)
                 Spacer()
-                Text(note.content)
+                Text(note.content.isEmpty ? "..." : note.content)
                     .font(.subheadline)
                     .foregroundColor(.gray)
                     .lineLimit(Constants.lineLimit)

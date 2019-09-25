@@ -3,7 +3,6 @@ import SwiftUI
 // MARK: - Constants
 
 private enum Constants {
-    static let newTitleMessage: String = "Add a title for your note"
     static let textFieldInsets: EdgeInsets = .init(top: 0, leading: 30, bottom: 0, trailing: 30)
 }
 
@@ -21,7 +20,7 @@ struct NoteCreateView: View {
     
     var body: some View {
         VStack {
-            Text(Constants.newTitleMessage)
+            Text(Strings.NoteCreate.newTitleMessage)
                 .padding()
             TextField("", text: $viewModel.title, onCommit: onTextFieldCommit)
                 .textFieldStyle(RoundedBorderTextFieldStyle())

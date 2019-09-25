@@ -1,12 +1,5 @@
 import SwiftUI
 
-// MARK: - Constants
-
-private enum Constants {
-    static let title: String = "Notes"
-    static let newNoteItemTitle: String = "Add"
-}
-
 // MARK: - List View
 
 struct NoteListView: View {
@@ -25,7 +18,7 @@ struct NoteListView: View {
                     NoteListRow(note: item)
                 }
             }
-            .navigationBarTitle(Constants.title)
+            .navigationBarTitle(Strings.NoteList.pageTitle)
             .navigationBarItems(trailing: rightBarButton)
             .createNote($viewModel.isShowingNoteCreationView)
         }
@@ -35,7 +28,7 @@ struct NoteListView: View {
     }
 
     private var rightBarButton: Button<Text> {
-        Button<Text>(Constants.newNoteItemTitle, action: toggleShowingTitleView)
+        Button<Text>(Strings.NoteList.rightBarButton, action: toggleShowingTitleView)
     }
     
     private func toggleShowingTitleView() {

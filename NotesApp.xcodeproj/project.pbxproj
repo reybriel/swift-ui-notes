@@ -18,6 +18,7 @@
 		16235445233BBAFD001B20A3 /* CanListNotes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16235444233BBAFD001B20A3 /* CanListNotes.swift */; };
 		16235447233BBC6E001B20A3 /* GetAllNotesUseCaseFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16235446233BBC6E001B20A3 /* GetAllNotesUseCaseFactory.swift */; };
 		1623544A233BBDF3001B20A3 /* NoteListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16235449233BBDF3001B20A3 /* NoteListViewModel.swift */; };
+		1623544D233BD229001B20A3 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1623544C233BD229001B20A3 /* Strings.swift */; };
 		1631270F2338DB5800791370 /* CleanList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1631270E2338DB5800791370 /* CleanList.swift */; };
 		1655B55D23058C850030A0C3 /* NoteListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1655B55C23058C850030A0C3 /* NoteListRow.swift */; };
 		16622B442306CCDF00E117F4 /* NoteEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16622B432306CCDF00E117F4 /* NoteEditView.swift */; };
@@ -53,6 +54,7 @@
 		16235444233BBAFD001B20A3 /* CanListNotes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanListNotes.swift; sourceTree = "<group>"; };
 		16235446233BBC6E001B20A3 /* GetAllNotesUseCaseFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAllNotesUseCaseFactory.swift; sourceTree = "<group>"; };
 		16235449233BBDF3001B20A3 /* NoteListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteListViewModel.swift; sourceTree = "<group>"; };
+		1623544C233BD229001B20A3 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		1631270E2338DB5800791370 /* CleanList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CleanList.swift; sourceTree = "<group>"; };
 		1655B55C23058C850030A0C3 /* NoteListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteListRow.swift; sourceTree = "<group>"; };
 		16622B432306CCDF00E117F4 /* NoteEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteEditView.swift; sourceTree = "<group>"; };
@@ -107,9 +109,18 @@
 			path = Row;
 			sourceTree = "<group>";
 		};
+		1623544B233BD21B001B20A3 /* Layout */ = {
+			isa = PBXGroup;
+			children = (
+				1623544C233BD229001B20A3 /* Strings.swift */,
+			);
+			path = Layout;
+			sourceTree = "<group>";
+		};
 		1631270C2338DB2900791370 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				1623544B233BD21B001B20A3 /* Layout */,
 				30D81C8D233AF5A100FBF978 /* Utils */,
 				30D81C88233AF27900FBF978 /* Protocols */,
 				168B00AC2338FCA600F46D8F /* Extensions */,
@@ -366,6 +377,7 @@
 				16BD067723047FE1009F24A2 /* NoteListView.swift in Sources */,
 				16622B442306CCDF00E117F4 /* NoteEditView.swift in Sources */,
 				1623543A233B980C001B20A3 /* Typealiases.swift in Sources */,
+				1623544D233BD229001B20A3 /* Strings.swift in Sources */,
 				16235447233BBC6E001B20A3 /* GetAllNotesUseCaseFactory.swift in Sources */,
 				160E5E872313F9C7008B2CBC /* NoteCreateView.swift in Sources */,
 				1623543C233B9ACD001B20A3 /* NotesDAO.swift in Sources */,
