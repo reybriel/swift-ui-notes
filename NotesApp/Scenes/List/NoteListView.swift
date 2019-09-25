@@ -27,9 +27,7 @@ struct NoteListView: View {
             }
             .navigationBarTitle(Constants.title)
             .navigationBarItems(trailing: rightBarButton)
-            .sheet(isPresented: $isShowingNoteTitleView) {
-                NoteCreateViewFactory.make()
-            }
+            .createNote($isShowingNoteTitleView)
         }
     }
 
