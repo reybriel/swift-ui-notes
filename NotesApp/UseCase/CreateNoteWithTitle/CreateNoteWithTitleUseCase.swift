@@ -6,7 +6,7 @@ typealias CreateNoteWithTitleUseCasePresenter = CanShowSuccess & CanShowAlertFee
 struct CreateNoteWithTitleUseCase: CanRun {
     let title: String
     unowned let presenter: CreateNoteWithTitleUseCasePresenter & AnyObject
-    let gateway: CreateNoteWithTitleGateway
+    unowned let gateway: CreateNoteWithTitleGateway
     
     func run() {
         if title.isEmpty {

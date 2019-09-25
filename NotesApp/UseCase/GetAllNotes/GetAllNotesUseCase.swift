@@ -4,8 +4,8 @@ import Combine
 typealias GetAllNotesUseCasePresenter = CanListNotes & CanShowAlertFeedback
 
 struct GetAllNotesUseCase: CanRun {
-    let gateway: GetAllNotesGateway
     unowned let presenter: GetAllNotesUseCasePresenter & AnyObject
+    unowned let gateway: GetAllNotesGateway
 
     func run() {
         let _ = gateway.createRequestUpstream()
