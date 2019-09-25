@@ -15,6 +15,7 @@ struct NoteCreateView: View {
 
     @ObservedObject
     var viewModel: NoteCreateViewModel
+    let createNoteWithTitleGateway: CreateNoteWithTitleGateway
     
     // MARK: Body
     
@@ -37,6 +38,7 @@ struct NoteCreateView: View {
     
     private func onTextFieldCommit() {
         CreateNoteWithTitleUseCaseFactory.make(title: viewModel.title,
-                                               presenter: viewModel).run()
+                                               presenter: viewModel,
+                                               gateway: createNoteWithTitleGateway).run()
     }
 }

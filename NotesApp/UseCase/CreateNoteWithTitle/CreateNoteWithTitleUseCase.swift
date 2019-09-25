@@ -6,6 +6,7 @@ typealias CreateNoteWithTitleUseCasePresenter = CanShowSuccess & CanShowAlertFee
 struct CreateNoteWithTitleUseCase: CanRun {
     let title: String
     unowned let presenter: CreateNoteWithTitleUseCasePresenter & AnyObject
+    let gateway: CreateNoteWithTitleGateway
     
     func run() {
         if title.isEmpty {
@@ -27,14 +28,15 @@ struct CreateNoteWithTitleUseCase: CanRun {
                 self.presenter.showSuccess()
             })
     }
-    
+
     private func createNote(completion: @escaping (Result<Void, Error>) -> Void) {
-        let _ = Timer.publish(every: 2.0, on: .main, in: .default)
-            .autoconnect()
-            .first()
-            .map({ _ in () })
-            .subscribe(on: DispatchQueue.global())
-            .sink(receiveValue: {
+        let _ = gateway.createSaveUpstream(noteTitle: title)
+            .receive(on: DispatchQueue.main)
+            .sink(receiveCompletion: { event in
+                if case let .failure(error) = event {
+                    completion(.failure(error))
+                }
+            }, receiveValue: {
                 completion(.success(()))
             })
     }
