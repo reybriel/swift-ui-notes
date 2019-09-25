@@ -31,8 +31,8 @@ struct NoteCreateView: View {
         .frame(maxHeight: .infinity)
         .background(Color.major)
         .alert(isPresented: $viewModel.shouldShowAlert) { () -> Alert in
-            Alert(title: Text(viewModel.alertFeedback.title),
-                  message: Text(viewModel.alertFeedback.message))
+            Alert(title: Text(viewModel.alertTitle),
+                  message: Text(viewModel.alertMessage))
         }
     }
 
