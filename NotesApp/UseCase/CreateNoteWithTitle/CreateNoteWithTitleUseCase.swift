@@ -12,12 +12,12 @@ struct CreateNoteWithTitleUseCase: CanRun {
         if title.isEmpty {
             presenter.show(feedback: .attemptToCreateNoteWithoutTitle)
         } else {
-            createNoteUpstream()
+            createNoteSaveUpstream()
         }
     }
     
     @discardableResult
-    private func createNoteUpstream() -> AnyCancellable {
+    private func createNoteSaveUpstream() -> AnyCancellable {
         Future(createNote)
             .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: { event in

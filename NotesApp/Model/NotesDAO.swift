@@ -9,6 +9,14 @@ extension Note {
         managedObject.creationDate = creationDate
         managedObject.lastEditDate = lastEditDate
     }
+
+    fileprivate static func from(cdNote: CDNote) -> Note {
+        Note(id: cdNote.objectID.description,
+             title: cdNote.title ?? "",
+             content: cdNote.content,
+             creationDate: cdNote.creationDate ?? Date(),
+             lastEditDate: cdNote.lastEditDate ?? Date())
+    }
 }
 
 final class NotesDAO {
@@ -42,5 +50,20 @@ final class NotesDAO {
                         creationDate: now,
                         lastEditDate: now)
         saveNote(note, completion: completion)
+    }
+
+    func getAllNotes(completion: @escaping VoidReturnOneArgClosure<Result<[Note], Error>>) {
+        let request: NSFetchRequest<CDNote> = CDNote.fetchRequest()
+        request.fetchBatchSize = 50
+        context.perform {
+            do {
+                let notes = try request.execute().map({ cdNote -> Note in
+                    Note.from(cdNote: cdNote)
+                })
+                completion(.success(notes))
+            } catch {
+                completion(.failure(error))
+            }
+        }
     }
 }

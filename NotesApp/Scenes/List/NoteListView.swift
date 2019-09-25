@@ -12,22 +12,25 @@ private enum Constants {
 struct NoteListView: View {
     
     // MARK: Properties
-    
-    @State
-    private var isShowingNoteTitleView: Bool = false
+
+    @ObservedObject
+    var viewModel: NoteListViewModel
 
     // MARK: Body
     
     var body: some View {
         NavigationView {
-            CleanList(items: NoteViewModel.all) { item in
+            CleanList(items: viewModel.notes) { item in
                 NavigationLink(destination: NoteEditViewFactory.make(note: item)) {
                     NoteListRow(note: item)
                 }
             }
             .navigationBarTitle(Constants.title)
             .navigationBarItems(trailing: rightBarButton)
-            .createNote($isShowingNoteTitleView)
+            .createNote($viewModel.isShowingNoteCreationView)
+        }
+        .onAppear {
+            GetAllNotesUseCaseFactory.make(presenter: self.viewModel).run()
         }
     }
 
@@ -36,6 +39,6 @@ struct NoteListView: View {
     }
     
     private func toggleShowingTitleView() {
-        isShowingNoteTitleView.toggle()
+        viewModel.isShowingNoteCreationView.toggle()
     }
 }

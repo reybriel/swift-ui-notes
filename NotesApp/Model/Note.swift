@@ -16,6 +16,13 @@ extension Note {
         var title: String
         var content: String
     }
+
+    var viewModel: ViewModel {
+        ViewModel(id: id,
+                  title: title,
+                  content: content ?? ""
+        )
+    }
 }
 
 #if DEBUG
