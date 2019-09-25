@@ -131,7 +131,6 @@
 			children = (
 				16BD067423047FE1009F24A2 /* SceneDelegate.swift */,
 				16BD067223047FE1009F24A2 /* AppDelegate.swift */,
-				16235434233B916D001B20A3 /* NotesModel.xcdatamodeld */,
 				16BD067823047FE3009F24A2 /* Assets.xcassets */,
 				16BD067D23047FE3009F24A2 /* LaunchScreen.storyboard */,
 			);
@@ -162,6 +161,7 @@
 		1655B56323059BE80030A0C3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				16235434233B916D001B20A3 /* NotesModel.xcdatamodeld */,
 				16BD06862304829D009F24A2 /* Note.swift */,
 				1623543B233B9ACD001B20A3 /* NotesDAO.swift */,
 			);
