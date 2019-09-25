@@ -1,10 +1,8 @@
 import SwiftUI
 
-private enum Constants {
-    static let textFieldInsets: EdgeInsets = .init(top: 0, leading: 30, bottom: 0, trailing: 30)
-}
-
 struct NoteCreateView: View {
+    static let textFieldRelation: CGFloat = 0.85
+
     @ObservedObject var viewModel: NoteCreateViewModel
     let createNoteWithTitleGateway: CreateNoteWithTitleGateway
     
@@ -14,10 +12,10 @@ struct NoteCreateView: View {
                 .padding()
             TextField("", text: $viewModel.title, onCommit: onTextFieldCommit)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
-                .padding(Constants.textFieldInsets)
                 .multilineTextAlignment(.center)
         }
         .frame(maxHeight: .infinity)
+        .relativeWidth(relation: NoteCreateView.textFieldRelation)
         .background(Color.major)
         .alert(isPresented: $viewModel.shouldShowAlert) { () -> Alert in
             Alert(title: Text(viewModel.alertTitle),

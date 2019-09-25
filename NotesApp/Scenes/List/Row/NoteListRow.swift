@@ -1,12 +1,8 @@
 import SwiftUI
 
-private enum Constants {
-    static let lineLimit: Int = 1
-    static let cornerRadius: CGFloat = 8.0
-    static let borderOpacity: Double = 0.3
-}
-
 struct NoteListRow: View {
+    static let lineLimit: Int = 1
+
     let note: NoteViewModel
     
     var body: some View {
@@ -16,16 +12,16 @@ struct NoteListRow: View {
                     .font(.headline)
                     .foregroundColor(.headline)
                 Spacer()
-                Text(note.content.isEmpty ? "..." : note.content)
+                Text(note.content.isEmpty ? Strings.NoteList.emptyContentPlaceholder : note.content)
                     .font(.subheadline)
                     .foregroundColor(.gray)
-                    .lineLimit(Constants.lineLimit)
+                    .lineLimit(NoteListRow.lineLimit)
             }
         }
         .frame(maxWidth: .infinity, alignment: .topLeading)
         .padding()
         .background(Color.major)
-        .cornerRadius(Constants.cornerRadius)
-        .shadow(radius: 1.0, x: -1, y: 1)
+        .cornerRadius(Sizes.cornerRadius)
+        .shadow(radius: Sizes.shadowRadius, x: Sizes.shadowXOffset, y: Sizes.shadowYOffset)
     }
 }
