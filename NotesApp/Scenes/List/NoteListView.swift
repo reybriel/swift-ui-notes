@@ -7,7 +7,7 @@ struct NoteListView: View {
         NavigationView {
             CleanList(items: viewModel.notes) { item in
                 NavigationLink(destination: NoteEditViewFactory.make(note: item)) {
-                    NoteListRow(note: item)
+                    NoteListRowFactory.make(note: item)
                 }
             }
             .navigationBarTitle(Strings.NoteList.pageTitle)
