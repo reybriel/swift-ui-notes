@@ -14,6 +14,6 @@ extension AlertFeedback {
 
 extension AlertFeedback {
     private static func error(message: String) -> AlertFeedback {
-        .init(title: "Oops!", message: message)
+        AlertFeedback(title: "Oops!", message: message)
     }
 }
