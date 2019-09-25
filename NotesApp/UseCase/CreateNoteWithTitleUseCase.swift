@@ -2,7 +2,7 @@ import Combine
 
 typealias CreateNoteWithTitleUseCasePresenter = CanShowSuccess & CanShowAlertFeedback
 
-struct CreateNoteWithTitleUseCase {
+struct CreateNoteWithTitleUseCase: CanRun {
     let title: String
     unowned let presenter: CreateNoteWithTitleUseCasePresenter & AnyObject
 

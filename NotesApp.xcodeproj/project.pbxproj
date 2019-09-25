@@ -27,6 +27,7 @@
 		30D81C92233AF77D00FBF978 /* NoteListViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D81C91233AF77D00FBF978 /* NoteListViewFactory.swift */; };
 		30D81C94233AF7F300FBF978 /* NoteCreateViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D81C93233AF7F300FBF978 /* NoteCreateViewFactory.swift */; };
 		30D81C96233AF8C800FBF978 /* NoteEditViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D81C95233AF8C800FBF978 /* NoteEditViewFactory.swift */; };
+		30D81C98233AF98D00FBF978 /* CanRun.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D81C97233AF98D00FBF978 /* CanRun.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		30D81C91233AF77D00FBF978 /* NoteListViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteListViewFactory.swift; sourceTree = "<group>"; };
 		30D81C93233AF7F300FBF978 /* NoteCreateViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCreateViewFactory.swift; sourceTree = "<group>"; };
 		30D81C95233AF8C800FBF978 /* NoteEditViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteEditViewFactory.swift; sourceTree = "<group>"; };
+		30D81C97233AF98D00FBF978 /* CanRun.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanRun.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,6 +193,7 @@
 			children = (
 				30D81C8B233AF2B400FBF978 /* CanShowSuccess.swift */,
 				30D81C89233AF28A00FBF978 /* CanShowAlertFeedback.swift */,
+				30D81C97233AF98D00FBF978 /* CanRun.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -288,6 +291,7 @@
 				1655B55D23058C850030A0C3 /* NoteListRow.swift in Sources */,
 				16BD067323047FE1009F24A2 /* AppDelegate.swift in Sources */,
 				30D81C94233AF7F300FBF978 /* NoteCreateViewFactory.swift in Sources */,
+				30D81C98233AF98D00FBF978 /* CanRun.swift in Sources */,
 				30D81C92233AF77D00FBF978 /* NoteListViewFactory.swift in Sources */,
 				30D81C8F233AF5BF00FBF978 /* AlertFeedback.swift in Sources */,
 				30D81C8C233AF2B400FBF978 /* CanShowSuccess.swift in Sources */,
