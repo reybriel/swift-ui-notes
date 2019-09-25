@@ -5,7 +5,6 @@ import SwiftUI
 private enum Constants {
     static let newTitleMessage: String = "Add a title for your note"
     static let textFieldInsets: EdgeInsets = .init(top: 0, leading: 30, bottom: 0, trailing: 30)
-    static let emptyTitleMessage: String = ""
 }
 
 // MARK: - Title View
