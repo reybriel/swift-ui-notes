@@ -10,12 +10,12 @@ private enum Constants {
 
 // MARK: - Title View
 
-struct NoteTitleView: View {
+struct NoteCreateView: View {
     
     // MARK: Properties
 
     @ObservedObject
-    var viewModel: NoteTitleViewModel = .init()
+    var viewModel: NoteCreateViewModel
     
     // MARK: Body
     

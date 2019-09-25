@@ -1,12 +1,12 @@
 import Combine
 
-final class NoteTitleViewModel: ObservableObject {
+final class NoteCreateViewModel: ObservableObject {
     @Published var title: String = ""
     @Published var shouldShowAlert: Bool = false
     private(set) var alertFeedback: AlertFeedback = .empty
 }
 
-extension NoteTitleViewModel: CreateNoteWithTitleUseCasePresenter {
+extension NoteCreateViewModel: CreateNoteWithTitleUseCasePresenter {
     
     func showSuccess() {
         title = ""

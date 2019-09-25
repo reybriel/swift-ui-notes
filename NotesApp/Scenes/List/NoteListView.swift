@@ -20,15 +20,15 @@ struct NoteListView: View {
     
     var body: some View {
         NavigationView {
-            CleanList(items: NoteViewModel.all) { note in
-                NavigationLink(destination: NoteEditView(note: note)) {
-                    NoteListRow(note: note)
+            CleanList(items: NoteViewModel.all) { item in
+                NavigationLink(destination: NoteEditViewFactory.make(note: item)) {
+                    NoteListRow(note: item)
                 }
             }
             .navigationBarTitle(Constants.title)
             .navigationBarItems(trailing: rightBarButton)
             .sheet(isPresented: $isShowingNoteTitleView) {
-                NoteTitleView()
+                NoteCreateViewFactory.make()
             }
         }
     }
