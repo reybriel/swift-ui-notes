@@ -35,8 +35,9 @@ struct NoteCreateView: View {
                   message: Text(viewModel.alertMessage))
         }
     }
-
+    
     private func onTextFieldCommit() {
-        CreateNoteWithTitleUseCase(title: viewModel.title, presenter: viewModel).run()
+        CreateNoteWithTitleUseCaseFactory.make(title: viewModel.title,
+                                               presenter: viewModel).run()
     }
 }
