@@ -5,7 +5,7 @@ struct NoteListView: View {
     
     var body: some View {
         NavigationView {
-            CleanList(items: viewModel.notes) { item in
+            List(viewModel.notes) { item in
                 NavigationLink(destination: NoteEditViewFactory.make(note: item)) {
                     NoteListRowFactory.make(note: item)
                 }

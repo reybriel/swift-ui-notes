@@ -10,18 +10,15 @@ struct NoteListRow: View {
             VStack(alignment: .leading) {
                 Text(note.title)
                     .font(.headline)
-                    .foregroundColor(.headline)
-                Spacer()
-                Text(note.content.isEmpty ? Strings.NoteList.emptyContentPlaceholder : note.content)
-                    .font(.subheadline)
-                    .foregroundColor(.gray)
-                    .lineLimit(NoteListRow.lineLimit)
+                if !note.content.isEmpty {
+                    Spacer()
+                    Text(note.content)
+                        .font(.subheadline).italic()
+                        .lineLimit(NoteListRow.lineLimit)
+                }
             }
         }
         .frame(maxWidth: .infinity, alignment: .topLeading)
         .padding()
-        .background(Color.major)
-        .cornerRadius(Sizes.cornerRadius)
-        .shadow(radius: Sizes.shadowRadius, x: Sizes.shadowXOffset, y: Sizes.shadowYOffset)
     }
 }
