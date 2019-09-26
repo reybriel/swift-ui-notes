@@ -60,6 +60,7 @@ final class NotesDAO {
     func getAllNotes(completion: @escaping VoidReturnOneArgClosure<Result<[Note], Error>>) {
         let request: NSFetchRequest<CDNote> = CDNote.fetchRequest()
         request.fetchBatchSize = 50
+        request.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: false)]
         context.perform {
             do {
                 let notes = try request.execute().map({ cdNote -> Note in
