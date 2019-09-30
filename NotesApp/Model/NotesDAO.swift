@@ -1,6 +1,8 @@
 import Combine
 import CoreData
 
+// MARK: - Note extension
+
 extension Note {
     fileprivate func createManagedObject(at context: NSManagedObjectContext)  {
         let managedObject: CDNote = .init(context: context)
@@ -11,6 +13,7 @@ extension Note {
     }
 
     fileprivate static func from(cdNote: CDNote) -> Note {
+        // TODO: Verify what comes out of objectID.description
         Note(id: cdNote.objectID.description,
              title: cdNote.title ?? "",
              content: cdNote.content,
@@ -19,20 +22,26 @@ extension Note {
     }
 }
 
+// MARK: - DAO
+
 final class NotesDAO {
-    static let shared: NotesDAO = .init()
 
+    // MARK: Properties
+
+    static let shared: NotesDAO = .init(persistentContainerName: "NotesModel")
     let didChange: PassthroughSubject<Void, Never> = .init()
-
-    private let persistentContainer: NSPersistentContainer = {
-        let container: NSPersistentContainer = .init(name: "NotesModel")
-        container.loadPersistentStores { _, _ in }
-        return container
-    }()
+    private let persistentContainer: NSPersistentContainer
 
     private var context: NSManagedObjectContext {
         persistentContainer.viewContext
     }
+
+    init(persistentContainerName: String) {
+        persistentContainer = NSPersistentContainer(name: persistentContainerName)
+        persistentContainer.loadPersistentStores { _, _ in }
+    }
+
+    // MARK: - Functions
 
     func saveNote(_ note: Note, completion: @escaping VoidReturnOneArgClosure<Result<Void, Error>>) {
         context.perform {
