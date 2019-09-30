@@ -1,7 +1,7 @@
 import Foundation
 import Combine
 
-typealias GetAllNotesUseCasePresenter = CanListNotes & CanShowAlertFeedback
+typealias GetAllNotesUseCasePresenter = CanListNotes & CanShowEmptyState & CanShowAlertFeedback
 
 struct GetAllNotesUseCase: CanRun {
     unowned let presenter: GetAllNotesUseCasePresenter & AnyObject
@@ -15,7 +15,11 @@ struct GetAllNotesUseCase: CanRun {
                     self.presenter.show(feedback: .unknownError)
                 }
             }, receiveValue: { notes in
-                self.presenter.list(notes: notes)
+                if notes.isEmpty {
+                    self.presenter.showEmptyState()
+                } else {
+                    self.presenter.list(notes: notes)
+                }
             })
     }
 }

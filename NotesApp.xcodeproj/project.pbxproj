@@ -33,6 +33,7 @@
 		166ACF7D233A731F0098323F /* CreateNoteWithTitleUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 166ACF7C233A731F0098323F /* CreateNoteWithTitleUseCase.swift */; };
 		1682022E234205C20068F388 /* NoteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1682022D234205C20068F388 /* NoteViewModel.swift */; };
 		16820231234207DF0068F388 /* NoteSortingKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16820230234207DF0068F388 /* NoteSortingKey.swift */; };
+		1682023323420DC20068F388 /* CanShowEmptyState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1682023223420DC20068F388 /* CanShowEmptyState.swift */; };
 		16BD067323047FE1009F24A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BD067223047FE1009F24A2 /* AppDelegate.swift */; };
 		16BD067523047FE1009F24A2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BD067423047FE1009F24A2 /* SceneDelegate.swift */; };
 		16BD067723047FE1009F24A2 /* NoteListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BD067623047FE1009F24A2 /* NoteListView.swift */; };
@@ -77,6 +78,7 @@
 		166ACF7C233A731F0098323F /* CreateNoteWithTitleUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNoteWithTitleUseCase.swift; sourceTree = "<group>"; };
 		1682022D234205C20068F388 /* NoteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteViewModel.swift; sourceTree = "<group>"; };
 		16820230234207DF0068F388 /* NoteSortingKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteSortingKey.swift; sourceTree = "<group>"; };
+		1682023223420DC20068F388 /* CanShowEmptyState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanShowEmptyState.swift; sourceTree = "<group>"; };
 		16BD066F23047FE1009F24A2 /* NotesApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NotesApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		16BD067223047FE1009F24A2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		16BD067423047FE1009F24A2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -291,6 +293,7 @@
 				30D81C8B233AF2B400FBF978 /* CanShowSuccess.swift */,
 				30D81C89233AF28A00FBF978 /* CanShowAlertFeedback.swift */,
 				30D81C97233AF98D00FBF978 /* CanRun.swift */,
+				1682023223420DC20068F388 /* CanShowEmptyState.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -408,6 +411,7 @@
 				30D81C92233AF77D00FBF978 /* NoteListViewFactory.swift in Sources */,
 				30D81C8F233AF5BF00FBF978 /* AlertFeedback.swift in Sources */,
 				16820231234207DF0068F388 /* NoteSortingKey.swift in Sources */,
+				1682023323420DC20068F388 /* CanShowEmptyState.swift in Sources */,
 				30D81C8C233AF2B400FBF978 /* CanShowSuccess.swift in Sources */,
 				30D81C8A233AF28A00FBF978 /* CanShowAlertFeedback.swift in Sources */,
 				16235456233BE1E8001B20A3 /* SubscribeToNoteChangesUseCaseFactory.swift in Sources */,
