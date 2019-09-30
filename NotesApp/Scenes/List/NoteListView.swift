@@ -5,21 +5,25 @@ struct NoteListView: View {
     
     var body: some View {
         NavigationView {
-            if viewModel.isShowingEmptyState {
-                Text(Strings.NoteList.emptyStateMessage)
-                    .font(.headline)
-                    .navigationBarTitle(Strings.NoteList.pageTitle)
-                    .createNote($viewModel.isShowingNoteCreationView)
-            } else {
-                List(viewModel.notes) { item in
-                    NavigationLink(destination: NoteEditViewFactory.make(note: item)) {
-                        NoteListRowFactory.make(note: item)
+            ZStack {
+                if viewModel.isShowingEmptyState {
+                    Text(Strings.NoteList.emptyStateMessage)
+                        .font(.headline)
+                } else {
+                    List(viewModel.notes) { item in
+                        NavigationLink(destination: NoteEditViewFactory.make(note: item)) {
+                            NoteListRowFactory.make(note: item)
+                        }
                     }
                 }
-                .navigationBarTitle(Strings.NoteList.pageTitle)
-                .navigationBarItems(trailing: rightBarButton)
-                .createNote($viewModel.isShowingNoteCreationView)
             }
+            .navigationBarTitle(Strings.NoteList.pageTitle)
+            .navigationBarItems(trailing: rightBarButton)
+            .createNote($viewModel.isShowingNoteCreationView)
+        }
+        .alert(isPresented: $viewModel.isShowingAlert) {
+            Alert(title: Text(viewModel.alertTitle),
+                  message: Text(viewModel.alertMessage))
         }
         .onAppear(perform: viewModel.onAppear)
     }

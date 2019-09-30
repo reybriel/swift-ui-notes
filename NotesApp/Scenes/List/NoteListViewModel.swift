@@ -3,7 +3,18 @@ import Combine
 final class NoteListViewModel: ObservableObject {
     @Published var isShowingNoteCreationView: Bool = false
     @Published var isShowingEmptyState: Bool = false
+    @Published var isShowingAlert: Bool = false
     @Published var notes: [NoteViewModel] = []
+
+    private var alertFeedback: AlertFeedback = .init(title: "", message: "")
+
+    var alertTitle: String {
+        alertFeedback.title
+    }
+
+    var alertMessage: String {
+        alertFeedback.message
+    }
 
     func onAppear() {
         GetAllNotesUseCaseFactory.make(presenter: self).run()
@@ -29,7 +40,8 @@ extension NoteListViewModel: GetAllNotesUseCasePresenter {
     }
 
     func show(feedback: AlertFeedback) {
-
+        alertFeedback = feedback
+        isShowingAlert = true
     }
 }
 
