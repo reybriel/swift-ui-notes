@@ -66,11 +66,9 @@ final class NotesDAO {
         saveNote(note, completion: completion)
     }
 
-    func getAllNotes(completion: @escaping VoidReturnOneArgClosure<Result<[Note], Error>>) {
+    func getAllNotes(sortingKey: SortingKey, completion: @escaping VoidReturnOneArgClosure<Result<[Note], Error>>) {
         context.perform {
-            let request: NSFetchRequest<CDNote> = CDNote.fetchRequest()
-            request.fetchBatchSize = 50
-            request.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: false)]
+            let request: NSFetchRequest<CDNote> = self.createFetchRequest(sortingKey: sortingKey)
             do {
                 let notes = try request.execute().map({ cdNote -> Note in
                     Note.from(cdNote: cdNote)
@@ -80,5 +78,19 @@ final class NotesDAO {
                 completion(.failure(error))
             }
         }
+    }
+
+    private func createFetchRequest(sortingKey: SortingKey) -> NSFetchRequest<CDNote> {
+        let request: NSFetchRequest = CDNote.fetchRequest()
+        request.fetchBatchSize = 50
+        request.sortDescriptors = [NSSortDescriptor(key: sortingKey.name, ascending: sortingKey.ascending)]
+        return request
+    }
+
+    struct SortingKey {
+        let name: String
+        let ascending: Bool
+
+        static let creationDateDescending: SortingKey = .init(name: "creationDate", ascending: false)
     }
 }
