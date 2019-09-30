@@ -1,6 +1,6 @@
 enum CreateNoteWithTitleUseCaseFactory {
     static func make(title: String, presenter: CreateNoteWithTitleUseCasePresenter & AnyObject,
-                     gateway: CreateNoteWithTitleGateway) -> some CanRun {
+                     gateway: CreateNoteWithTitleGateway) -> CanRun {
         CreateNoteWithTitleUseCase(title: title, presenter: presenter, gateway: gateway)
     }
 }
