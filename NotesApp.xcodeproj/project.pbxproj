@@ -31,6 +31,8 @@
 		16622B442306CCDF00E117F4 /* NoteEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16622B432306CCDF00E117F4 /* NoteEditView.swift */; };
 		166ACF7B233A6FB80098323F /* NoteCreateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 166ACF7A233A6FB80098323F /* NoteCreateViewModel.swift */; };
 		166ACF7D233A731F0098323F /* CreateNoteWithTitleUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 166ACF7C233A731F0098323F /* CreateNoteWithTitleUseCase.swift */; };
+		1682022E234205C20068F388 /* NoteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1682022D234205C20068F388 /* NoteViewModel.swift */; };
+		16820231234207DF0068F388 /* NoteSortingKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16820230234207DF0068F388 /* NoteSortingKey.swift */; };
 		16BD067323047FE1009F24A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BD067223047FE1009F24A2 /* AppDelegate.swift */; };
 		16BD067523047FE1009F24A2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BD067423047FE1009F24A2 /* SceneDelegate.swift */; };
 		16BD067723047FE1009F24A2 /* NoteListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BD067623047FE1009F24A2 /* NoteListView.swift */; };
@@ -73,6 +75,8 @@
 		16622B432306CCDF00E117F4 /* NoteEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteEditView.swift; sourceTree = "<group>"; };
 		166ACF7A233A6FB80098323F /* NoteCreateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCreateViewModel.swift; sourceTree = "<group>"; };
 		166ACF7C233A731F0098323F /* CreateNoteWithTitleUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNoteWithTitleUseCase.swift; sourceTree = "<group>"; };
+		1682022D234205C20068F388 /* NoteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteViewModel.swift; sourceTree = "<group>"; };
+		16820230234207DF0068F388 /* NoteSortingKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteSortingKey.swift; sourceTree = "<group>"; };
 		16BD066F23047FE1009F24A2 /* NotesApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NotesApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		16BD067223047FE1009F24A2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		16BD067423047FE1009F24A2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -197,9 +201,10 @@
 		1655B56323059BE80030A0C3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				1682022F234206D10068F388 /* DAO */,
 				16235434233B916D001B20A3 /* NotesModel.xcdatamodeld */,
 				16BD06862304829D009F24A2 /* Note.swift */,
-				1623543B233B9ACD001B20A3 /* NotesDAO.swift */,
+				1682022D234205C20068F388 /* NoteViewModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -221,6 +226,15 @@
 				30D81C9B233B0D9100FBF978 /* CreateNoteWithTitle */,
 			);
 			path = UseCase;
+			sourceTree = "<group>";
+		};
+		1682022F234206D10068F388 /* DAO */ = {
+			isa = PBXGroup;
+			children = (
+				16820230234207DF0068F388 /* NoteSortingKey.swift */,
+				1623543B233B9ACD001B20A3 /* NotesDAO.swift */,
+			);
+			path = DAO;
 			sourceTree = "<group>";
 		};
 		168B00AC2338FCA600F46D8F /* Extensions */ = {
@@ -393,6 +407,7 @@
 				16235436233B916D001B20A3 /* NotesModel.xcdatamodeld in Sources */,
 				30D81C92233AF77D00FBF978 /* NoteListViewFactory.swift in Sources */,
 				30D81C8F233AF5BF00FBF978 /* AlertFeedback.swift in Sources */,
+				16820231234207DF0068F388 /* NoteSortingKey.swift in Sources */,
 				30D81C8C233AF2B400FBF978 /* CanShowSuccess.swift in Sources */,
 				30D81C8A233AF28A00FBF978 /* CanShowAlertFeedback.swift in Sources */,
 				16235456233BE1E8001B20A3 /* SubscribeToNoteChangesUseCaseFactory.swift in Sources */,
@@ -407,6 +422,7 @@
 				16235451233BD9A5001B20A3 /* Sizes.swift in Sources */,
 				16BD067723047FE1009F24A2 /* NoteListView.swift in Sources */,
 				16622B442306CCDF00E117F4 /* NoteEditView.swift in Sources */,
+				1682022E234205C20068F388 /* NoteViewModel.swift in Sources */,
 				1623543A233B980C001B20A3 /* Typealiases.swift in Sources */,
 				1623544D233BD229001B20A3 /* Strings.swift in Sources */,
 				16235447233BBC6E001B20A3 /* GetAllNotesUseCaseFactory.swift in Sources */,

@@ -27,6 +27,7 @@ extension Note {
 final class NotesDAO {
 
     // MARK: Properties
+    typealias SortingKey = NoteSortingKey
 
     static let shared: NotesDAO = .init(persistentContainerName: "NotesModel")
     let didChange: PassthroughSubject<Void, Never> = .init()
@@ -83,14 +84,7 @@ final class NotesDAO {
     private func createFetchRequest(sortingKey: SortingKey) -> NSFetchRequest<CDNote> {
         let request: NSFetchRequest = CDNote.fetchRequest()
         request.fetchBatchSize = 50
-        request.sortDescriptors = [NSSortDescriptor(key: sortingKey.name, ascending: sortingKey.ascending)]
+        request.sortDescriptors = [sortingKey.createSortDescriptor()]
         return request
-    }
-
-    struct SortingKey {
-        let name: String
-        let ascending: Bool
-
-        static let creationDateDescending: SortingKey = .init(name: "creationDate", ascending: false)
     }
 }

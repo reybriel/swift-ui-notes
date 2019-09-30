@@ -18,7 +18,7 @@ extension NoteListViewModel: GetAllNotesUseCasePresenter {
 
     func list(notes: [Note]) {
         self.notes = notes.map({ note -> NoteViewModel in
-            note.viewModel
+            NoteViewModel.from(note: note)
         })
     }
 
