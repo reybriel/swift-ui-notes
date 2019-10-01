@@ -12,13 +12,17 @@ extension Note {
         managedObject.creationDate = creationDate
         managedObject.lastEditDate = lastEditDate
     }
+}
 
-    fileprivate static func from(cdNote: CDNote) -> Note {
-        Note(id: cdNote.id ?? UUID().uuidString,
-             title: cdNote.title ?? "",
-             content: cdNote.content,
-             creationDate: cdNote.creationDate ?? Date(),
-             lastEditDate: cdNote.lastEditDate ?? Date())
+// MARK: - CDNote extension
+
+extension CDNote {
+    fileprivate var note: Note {
+        Note(id: id ?? UUID().uuidString,
+             title: title ?? "",
+             content: content,
+             creationDate: creationDate ?? Date(),
+             lastEditDate: lastEditDate ?? Date())
     }
 }
 
@@ -37,12 +41,14 @@ final class NotesDAO {
         persistentContainer.viewContext
     }
 
+    // MARK: - Initializer
+
     init(persistentContainerName: String) {
         persistentContainer = NSPersistentContainer(name: persistentContainerName)
         persistentContainer.loadPersistentStores { _, _ in }
     }
 
-    // MARK: - Functions
+    // MARK: Functions
 
     func saveNote(_ note: Note, completion: @escaping VoidReturnOneArgClosure<Result<Void, Error>>) {
         context.perform {
@@ -72,7 +78,7 @@ final class NotesDAO {
             let request: NSFetchRequest<CDNote> = self.createFetchRequest(sortingKey: sortingKey)
             do {
                 let notes = try request.execute().map({ cdNote -> Note in
-                    Note.from(cdNote: cdNote)
+                    cdNote.note
                 })
                 completion(.success(notes))
             } catch {
