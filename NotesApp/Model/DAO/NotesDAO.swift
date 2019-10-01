@@ -6,6 +6,7 @@ import CoreData
 extension Note {
     fileprivate func createManagedObject(at context: NSManagedObjectContext)  {
         let managedObject: CDNote = .init(context: context)
+        managedObject.id = id
         managedObject.title = title
         managedObject.content = content
         managedObject.creationDate = creationDate
@@ -13,8 +14,7 @@ extension Note {
     }
 
     fileprivate static func from(cdNote: CDNote) -> Note {
-        // TODO: Verify what comes out of objectID.description
-        Note(id: cdNote.objectID.description,
+        Note(id: cdNote.id ?? UUID().uuidString,
              title: cdNote.title ?? "",
              content: cdNote.content,
              creationDate: cdNote.creationDate ?? Date(),
@@ -49,8 +49,8 @@ final class NotesDAO {
             do {
                 note.createManagedObject(at: self.context)
                 try self.context.save()
-                completion(.success(()))
                 self.didChange.send(())
+                completion(.success(()))
             } catch {
                 completion(.failure(error))
             }
@@ -59,7 +59,7 @@ final class NotesDAO {
 
     func saveNote(with title: String, completion: @escaping VoidReturnOneArgClosure<Result<Void, Error>>) {
         let now = Date()
-        let note = Note(id: "",
+        let note = Note(id: UUID().uuidString,
                         title: title,
                         content: nil,
                         creationDate: now,
