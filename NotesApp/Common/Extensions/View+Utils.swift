@@ -1,9 +1,7 @@
 import SwiftUI
 
 extension View {
-    func relativeWidth(relation: CGFloat) -> some View {
-        GeometryReader { proxy in
-            self.frame(width: proxy.size.width * relation)
-        }
+    func expanded() -> some View {
+        GeometryReader { _ in self }
     }
 }

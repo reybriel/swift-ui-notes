@@ -23,6 +23,10 @@ final class NoteCreateViewModel: ObservableObject {
         CreateNoteWithTitleUseCaseFactory.make(title: title, presenter: self,
                                                gateway: NotesDAO.shared).run()
     }
+
+    func onCloseButtonTap() {
+        isPresented.wrappedValue = false
+    }
 }
 
 extension NoteCreateViewModel: CreateNoteWithTitleUseCasePresenter {
