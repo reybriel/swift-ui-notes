@@ -31,6 +31,8 @@
 		16622B442306CCDF00E117F4 /* NoteEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16622B432306CCDF00E117F4 /* NoteEditView.swift */; };
 		166ACF7B233A6FB80098323F /* NoteCreateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 166ACF7A233A6FB80098323F /* NoteCreateViewModel.swift */; };
 		166ACF7D233A731F0098323F /* CreateNoteWithTitleUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 166ACF7C233A731F0098323F /* CreateNoteWithTitleUseCase.swift */; };
+		167897DA2343CA1F00B223B6 /* NoteEditViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167897D92343CA1F00B223B6 /* NoteEditViewModel.swift */; };
+		167FF1222343C0950005E4EC /* NoteTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167FF1212343C0950005E4EC /* NoteTextView.swift */; };
 		1682022E234205C20068F388 /* NoteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1682022D234205C20068F388 /* NoteViewModel.swift */; };
 		16820231234207DF0068F388 /* NoteSortingKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16820230234207DF0068F388 /* NoteSortingKey.swift */; };
 		1682023323420DC20068F388 /* CanShowEmptyState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1682023223420DC20068F388 /* CanShowEmptyState.swift */; };
@@ -76,6 +78,8 @@
 		16622B432306CCDF00E117F4 /* NoteEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteEditView.swift; sourceTree = "<group>"; };
 		166ACF7A233A6FB80098323F /* NoteCreateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCreateViewModel.swift; sourceTree = "<group>"; };
 		166ACF7C233A731F0098323F /* CreateNoteWithTitleUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNoteWithTitleUseCase.swift; sourceTree = "<group>"; };
+		167897D92343CA1F00B223B6 /* NoteEditViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteEditViewModel.swift; sourceTree = "<group>"; };
+		167FF1212343C0950005E4EC /* NoteTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTextView.swift; sourceTree = "<group>"; };
 		1682022D234205C20068F388 /* NoteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteViewModel.swift; sourceTree = "<group>"; };
 		16820230234207DF0068F388 /* NoteSortingKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteSortingKey.swift; sourceTree = "<group>"; };
 		1682023223420DC20068F388 /* CanShowEmptyState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanShowEmptyState.swift; sourceTree = "<group>"; };
@@ -163,6 +167,7 @@
 		1631270D2338DB4100791370 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				167FF1212343C0950005E4EC /* NoteTextView.swift */,
 				1631270E2338DB5800791370 /* CleanList.swift */,
 			);
 			path = View;
@@ -215,6 +220,7 @@
 			isa = PBXGroup;
 			children = (
 				16622B432306CCDF00E117F4 /* NoteEditView.swift */,
+				167897D92343CA1F00B223B6 /* NoteEditViewModel.swift */,
 				30D81C95233AF8C800FBF978 /* NoteEditViewFactory.swift */,
 			);
 			path = Edit;
@@ -399,6 +405,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				16235445233BBAFD001B20A3 /* CanListNotes.swift in Sources */,
+				167897DA2343CA1F00B223B6 /* NoteEditViewModel.swift in Sources */,
 				1623544F233BD75A001B20A3 /* View+Utils.swift in Sources */,
 				1655B55D23058C850030A0C3 /* NoteListRow.swift in Sources */,
 				16BD067323047FE1009F24A2 /* AppDelegate.swift in Sources */,
@@ -407,6 +414,7 @@
 				30D81C94233AF7F300FBF978 /* NoteCreateViewFactory.swift in Sources */,
 				16235458233BE216001B20A3 /* SubscribeToNoteChangesGateway.swift in Sources */,
 				30D81C98233AF98D00FBF978 /* CanRun.swift in Sources */,
+				167FF1222343C0950005E4EC /* NoteTextView.swift in Sources */,
 				16235436233B916D001B20A3 /* NotesModel.xcdatamodeld in Sources */,
 				30D81C92233AF77D00FBF978 /* NoteListViewFactory.swift in Sources */,
 				30D81C8F233AF5BF00FBF978 /* AlertFeedback.swift in Sources */,
