@@ -10,12 +10,10 @@ struct NoteListRow: View {
             VStack(alignment: .leading) {
                 Text(viewModel.noteTitle)
                     .font(.headline)
-                if viewModel.isShowingContent {
-                    Spacer()
-                    Text(viewModel.noteContent)
-                        .font(.subheadline).italic()
-                        .lineLimit(NoteListRow.lineLimit)
-                }
+                Spacer()
+                Text(viewModel.isShowingContent ? viewModel.noteContent : Strings.NoteList.Row.emptyContentMessage)
+                    .font(.subheadline).italic().foregroundColor(.gray)
+                    .lineLimit(NoteListRow.lineLimit)
             }
         }
         .frame(maxWidth: .infinity, alignment: .topLeading)
