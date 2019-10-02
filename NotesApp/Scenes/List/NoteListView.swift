@@ -28,7 +28,9 @@ struct NoteListView: View {
         .onAppear(perform: viewModel.onAppear)
     }
 
-    private var rightBarButton: Button<Text> {
-        Button<Text>(Strings.NoteList.rightBarButton, action: viewModel.toggleShowingCreationView)
+    private var rightBarButton: Button<Image> {
+        Button<Image>.init(action: viewModel.toggleShowingCreationView) {
+            Image.init(systemName: "square.and.pencil")
+        }
     }
 }
