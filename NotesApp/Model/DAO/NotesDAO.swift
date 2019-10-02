@@ -73,10 +73,43 @@ final class NotesDAO {
         saveNote(note, completion: completion)
     }
 
+    func update(_ note: NoteViewModel, completion: @escaping VoidReturnOneArgClosure<Result<NoteViewModel, Error>>) {
+        context.perform {
+            do {
+                let byId: NSPredicate = .init(format: "id == %@", note.id)
+                let request = self.createFetchRequest(predicate: byId, sortingKey: .default)
+                if let cdNote = try request.execute().first {
+                    try self.update(note: cdNote, with: note)
+                    self.didChange.send(())
+                    completion(.success(note))
+                } else {
+                    completion(.failure(NotesDAOError.noteNotFound))
+                }
+            } catch {
+                completion(.failure(error))
+            }
+        }
+    }
+
+    private func createFetchRequest(predicate: NSPredicate, sortingKey: SortingKey) -> NSFetchRequest<CDNote> {
+        let request: NSFetchRequest = CDNote.fetchRequest()
+        request.predicate = predicate
+        request.fetchBatchSize = 50
+        request.sortDescriptors = [sortingKey.createSortDescriptor()]
+        return request
+    }
+
+    private func update(note: CDNote, with viewModel: NoteViewModel) throws {
+        note.title = viewModel.title
+        note.content = viewModel.content
+        note.lastEditDate = Date()
+        try context.save()
+    }
+
     func getAllNotes(sortingKey: SortingKey, completion: @escaping VoidReturnOneArgClosure<Result<[Note], Error>>) {
         context.perform {
-            let request: NSFetchRequest<CDNote> = self.createFetchRequest(sortingKey: sortingKey)
             do {
+                let request: NSFetchRequest<CDNote> = self.createFetchRequest(sortingKey: sortingKey)
                 let notes = try request.execute().map({ cdNote -> Note in
                     cdNote.note
                 })
@@ -93,4 +126,10 @@ final class NotesDAO {
         request.sortDescriptors = [sortingKey.createSortDescriptor()]
         return request
     }
+}
+
+// MARK: - Related types
+
+enum NotesDAOError: Error {
+    case noteNotFound
 }
