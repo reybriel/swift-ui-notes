@@ -1,4 +1,4 @@
-git_url("https://github.com/reybriel/match-certificates.git")
+git_url("git@github.com:reybriel/match-certificates.git")
 
 storage_mode("git")
 
