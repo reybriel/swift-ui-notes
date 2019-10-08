@@ -1,7 +1,7 @@
 @testable
 import NotesApp
 
-import Combine
+import class Combine.Future
 
 final class UpdateNoteGatewayStub: UpdateNoteGateway {
     private var result: Result<NoteViewModel, Error> = .failure(TestError())

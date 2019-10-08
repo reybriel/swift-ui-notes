@@ -1,7 +1,7 @@
 @testable
 import NotesApp
 
-import XCTest
+import class XCTest.XCTestCase
 
 final class SubscribeToNoteChangesUseCaseTests: XCTestCase {
     private var sut: SubscribeToNoteChangesUseCase!

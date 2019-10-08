@@ -1,7 +1,8 @@
 @testable
 import NotesApp
 
-import Combine
+import struct Combine.Just
+import struct Combine.AnyPublisher
 
 final class SubscribeToNoteChangesGatewayStub: SubscribeToNoteChangesGateway {
     func createNoteChangesUpstream() -> AnyPublisher<Void, Never> {
