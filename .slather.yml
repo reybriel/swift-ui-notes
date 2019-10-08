@@ -1,0 +1,7 @@
+coverage_service: cobertura_xml
+xcodeproj: NotesApp.xcodeproj
+scheme: NotesApp
+configuration: TestedConfiguration
+output_directory: report
+ignore:
+  - NotesAppTests/*
