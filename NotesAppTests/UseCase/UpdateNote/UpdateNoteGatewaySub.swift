@@ -4,7 +4,6 @@ import NotesApp
 import Combine
 
 final class UpdateNoteGatewayStub: UpdateNoteGateway {
-
     private var result: Result<NoteViewModel, Error> = .failure(TestError())
 
     func returnError() {
