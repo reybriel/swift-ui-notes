@@ -397,8 +397,8 @@
 		16F8547E234CC7750005C798 /* SubscribeToNoteChanges */ = {
 			isa = PBXGroup;
 			children = (
-				16F8547F234CC7AC0005C798 /* SubscribeToNoteChangesGatewayStub.swift */,
 				16F85483234CCB8E0005C798 /* SubscribeToNoteChangesUseCaseTests.swift */,
+				16F8547F234CC7AC0005C798 /* SubscribeToNoteChangesGatewayStub.swift */,
 				16F85481234CCB180005C798 /* SubscribeToNoteChangesUseCasePresenterSpy.swift */,
 			);
 			path = SubscribeToNoteChanges;
