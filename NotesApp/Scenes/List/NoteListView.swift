@@ -1,25 +1,36 @@
 import SwiftUI
 
-// MARK: - Constants
-
-private enum Constants {
-    static let title: String = "Notes"
-}
-
-// MARK: - List View
-
 struct NoteListView: View {
-    
-    // MARK: Body
+    @ObservedObject var viewModel: NoteListViewModel
     
     var body: some View {
         NavigationView {
-            List(NoteViewModel.all) { note in
-                NavigationLink(destination: NoteEditView(note: note)) {
-                    NoteListRow(note: note)
+            ZStack {
+                if viewModel.isShowingEmptyState {
+                    Text(Strings.NoteList.emptyStateMessage)
+                        .font(.headline)
+                } else {
+                    List(viewModel.notes) { item in
+                        NavigationLink(destination: NoteEditViewFactory.make(note: item)) {
+                            NoteListRowFactory.make(note: item)
+                        }
+                    }
                 }
             }
-            .navigationBarTitle(Constants.title)
+            .navigationBarTitle(Strings.NoteList.pageTitle)
+            .navigationBarItems(trailing: rightBarButton)
+            .createNote($viewModel.isShowingNoteCreationView)
+        }
+        .alert(isPresented: $viewModel.isShowingAlert) {
+            Alert(title: Text(viewModel.alertTitle),
+                  message: Text(viewModel.alertMessage))
+        }
+        .onAppear(perform: viewModel.onAppear)
+    }
+
+    private var rightBarButton: Button<Image> {
+        Button<Image>.init(action: viewModel.toggleShowingCreationView) {
+            Image.init(systemName: "square.and.pencil")
         }
     }
 }

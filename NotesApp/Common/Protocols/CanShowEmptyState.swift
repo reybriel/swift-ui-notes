@@ -1,0 +1,3 @@
+protocol CanShowEmptyState {
+    func showEmptyState()
+}

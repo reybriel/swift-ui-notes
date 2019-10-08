@@ -1,27 +1,23 @@
 import SwiftUI
 
-// MARK: - Constants
-
-private enum Constants {
-    static let newNoteTitle: String = "New Note"
-}
-
-// MARK: - Edit View
-
 struct NoteEditView: View {
-    
-    // MARK: Properties
-    
-    private var title: Text {
-        Text(note?.title ?? Constants.newNoteTitle)
-    }
-    
-    let note: NoteViewModel?
-    
-    // MARK:Body
+    @ObservedObject
+    var viewModel: NoteEditViewModel
     
     var body: some View {
-        Text("Hello note edit!")
+        NoteTextView(text: $viewModel.text)
+            .frame(maxHeight: .infinity)
             .navigationBarTitle(title, displayMode: .inline)
+            .navigationBarItems(trailing: saveButton.disabled(viewModel.isSaveButtonDisabled))
+    }
+
+    private var title: Text {
+        Text(viewModel.title)
+    }
+
+    private var saveButton: Button<Text> {
+        Button(action: viewModel.onSaveButtonTap, label: {
+            Text("Save")
+        })
     }
 }

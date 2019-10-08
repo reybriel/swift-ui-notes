@@ -1,0 +1,3 @@
+protocol CanRun {
+    func run()
+}
