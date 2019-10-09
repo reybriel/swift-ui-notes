@@ -1,2 +1,2 @@
 bundle install
-slather coverage --show --html
+bundle exec slather coverage --show --html
