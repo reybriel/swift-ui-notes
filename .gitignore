@@ -1,6 +1,9 @@
-
 # Created by https://www.gitignore.io/api/xcode,swift,macos
 # Edit at https://www.gitignore.io/?templates=xcode,swift,macos
+
+### Slather ###
+
+slather_report/*
 
 ### macOS ###
 # General
