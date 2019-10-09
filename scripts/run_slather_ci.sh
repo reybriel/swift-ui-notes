@@ -1,3 +1,3 @@
 gem install bundler
 bundle install
-bundle exec slather coverage --show --html
+slather coverage --show --html
