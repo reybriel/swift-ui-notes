@@ -22,9 +22,14 @@ platform :ios do
     build_app(scheme: "NotesApp")
     upload_to_testflight(skip_waiting_for_build_processing: true)
   end
+  desc "Execute tests at CI"
+  lane :testci do
+    scan(scheme: "NotesApp", device: "iPhone 8", code_coverage: true)
+    slather(show: true)
+  end
   desc "Execute tests"
   lane :test do
     scan(scheme: "NotesApp", device: "iPhone 8", code_coverage: true)
-    slather(show: true)
+    slather(show: true, html: true)
   end
 end
