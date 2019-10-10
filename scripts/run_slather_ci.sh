@@ -9,4 +9,4 @@ if [[ -f Gemfile.lock ]]; then
 fi
 
 bundle install
-bundle exec slather coverage --show --html
+bundle exec slather coverage --show
