@@ -24,7 +24,7 @@ platform :ios do
   end
   desc "Execute tests"
   lane :test do
-    scan(scheme: "NoteApp", device: "iPhone 8", code_coverage: true)
+    scan(scheme: "NotesApp", device: "iPhone 8", code_coverage: true)
     slather(show: true)
   end
 end
