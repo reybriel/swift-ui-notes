@@ -4,7 +4,7 @@ if [[ -f Gemfile.lock ]]; then
 
     if [[ $GEM_BUNDLER_VERSION != $CURRENT_BUNDLER_VERSION ]]; then
         gem uninstall bundler --force --executables
-        gem install bundler --force
+        gem install bundler -v=$GEM_BUNDLER_VERSION --force
     fi
 fi
 
