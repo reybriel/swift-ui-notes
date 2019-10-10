@@ -47,6 +47,10 @@
 		16BD067C23047FE3009F24A2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16BD067B23047FE3009F24A2 /* Preview Assets.xcassets */; };
 		16BD067F23047FE3009F24A2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16BD067D23047FE3009F24A2 /* LaunchScreen.storyboard */; };
 		16BD06872304829D009F24A2 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BD06862304829D009F24A2 /* Note.swift */; };
+		16BE1556234F3BED00279B5B /* GetAllNotesUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BE1555234F3BED00279B5B /* GetAllNotesUseCaseTests.swift */; };
+		16BE1558234F3C0200279B5B /* GetAllNotesGatewayStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BE1557234F3C0200279B5B /* GetAllNotesGatewayStub.swift */; };
+		16BE155A234F3C0F00279B5B /* GetAllNotesUseCasePresenterSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BE1559234F3C0F00279B5B /* GetAllNotesUseCasePresenterSpy.swift */; };
+		16BE155C234F3E3F00279B5B /* NoteMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BE155B234F3E3F00279B5B /* NoteMock.swift */; };
 		16F85473234CB5440005C798 /* UpdateNoteUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F85472234CB5440005C798 /* UpdateNoteUseCaseTests.swift */; };
 		16F85476234CB6600005C798 /* NoteViewModelMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F85475234CB6600005C798 /* NoteViewModelMock.swift */; };
 		16F85478234CB7760005C798 /* UpdateNoteGatewaySub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F85477234CB7760005C798 /* UpdateNoteGatewaySub.swift */; };
@@ -118,6 +122,10 @@
 		16BD067E23047FE3009F24A2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		16BD068023047FE3009F24A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		16BD06862304829D009F24A2 /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
+		16BE1555234F3BED00279B5B /* GetAllNotesUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAllNotesUseCaseTests.swift; sourceTree = "<group>"; };
+		16BE1557234F3C0200279B5B /* GetAllNotesGatewayStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAllNotesGatewayStub.swift; sourceTree = "<group>"; };
+		16BE1559234F3C0F00279B5B /* GetAllNotesUseCasePresenterSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAllNotesUseCasePresenterSpy.swift; sourceTree = "<group>"; };
+		16BE155B234F3E3F00279B5B /* NoteMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteMock.swift; sourceTree = "<group>"; };
 		16F85464234CB4BB0005C798 /* NotesAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NotesAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		16F85468234CB4BB0005C798 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		16F85472234CB5440005C798 /* UpdateNoteUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateNoteUseCaseTests.swift; sourceTree = "<group>"; };
@@ -348,6 +356,16 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		16BE1554234F3BC400279B5B /* GetAllNotes */ = {
+			isa = PBXGroup;
+			children = (
+				16BE1555234F3BED00279B5B /* GetAllNotesUseCaseTests.swift */,
+				16BE1557234F3C0200279B5B /* GetAllNotesGatewayStub.swift */,
+				16BE1559234F3C0F00279B5B /* GetAllNotesUseCasePresenterSpy.swift */,
+			);
+			path = GetAllNotes;
+			sourceTree = "<group>";
+		};
 		16F85465234CB4BB0005C798 /* NotesAppTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -364,6 +382,7 @@
 			children = (
 				16F85471234CB5220005C798 /* UpdateNote */,
 				16F8547E234CC7750005C798 /* SubscribeToNoteChanges */,
+				16BE1554234F3BC400279B5B /* GetAllNotes */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -381,6 +400,7 @@
 		16F85474234CB6440005C798 /* Mocks */ = {
 			isa = PBXGroup;
 			children = (
+				16BE155B234F3E3F00279B5B /* NoteMock.swift */,
 				16F85475234CB6600005C798 /* NoteViewModelMock.swift */,
 			);
 			path = Mocks;
@@ -604,8 +624,12 @@
 				16F85476234CB6600005C798 /* NoteViewModelMock.swift in Sources */,
 				16F8547D234CB9A20005C798 /* UpdateNoteUseCasePresenterSpy.swift in Sources */,
 				16F85484234CCB8E0005C798 /* SubscribeToNoteChangesUseCaseTests.swift in Sources */,
+				16BE155A234F3C0F00279B5B /* GetAllNotesUseCasePresenterSpy.swift in Sources */,
+				16BE155C234F3E3F00279B5B /* NoteMock.swift in Sources */,
 				16F85478234CB7760005C798 /* UpdateNoteGatewaySub.swift in Sources */,
 				16F8547B234CB8CE0005C798 /* ErrorUtils.swift in Sources */,
+				16BE1556234F3BED00279B5B /* GetAllNotesUseCaseTests.swift in Sources */,
+				16BE1558234F3C0200279B5B /* GetAllNotesGatewayStub.swift in Sources */,
 				16F85473234CB5440005C798 /* UpdateNoteUseCaseTests.swift in Sources */,
 				16F85482234CCB180005C798 /* SubscribeToNoteChangesUseCasePresenterSpy.swift in Sources */,
 			);
