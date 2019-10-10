@@ -9,4 +9,5 @@ if [[ -f Gemfile.lock ]]; then
 fi
 
 bundle install
-bundle exec slather coverage --show
+bundle exec slather
+bash <(curl -s https://codecov.io/bash) -f slather_report/cobertura.xml -X coveragepy -X gcov -X xcode
