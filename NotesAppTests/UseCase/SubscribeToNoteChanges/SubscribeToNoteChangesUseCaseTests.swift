@@ -1,9 +1,7 @@
 @testable
 import NotesApp
 
-import class XCTest.XCTestCase
-
-final class SubscribeToNoteChangesUseCaseTests: XCTestCase {
+final class SubscribeToNoteChangesUseCaseTests: NotesTestCase {
     private var sut: SubscribeToNoteChangesUseCase!
     private var gateway: SubscribeToNoteChangesGatewayStub!
     private var presenter: SubscribeToNoteChangesUseCasePresenterSpy!
@@ -16,6 +14,6 @@ final class SubscribeToNoteChangesUseCaseTests: XCTestCase {
 
     func testHasToShowSuccessWhenChange() {
         sut.run()
-        wait(for: [presenter.invokedShowSuccess], timeout: 0.1)
+        expect(presenter.invokedShowSuccess)
     }
 }

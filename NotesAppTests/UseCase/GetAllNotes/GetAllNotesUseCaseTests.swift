@@ -1,9 +1,7 @@
 @testable
 import NotesApp
 
-import class XCTest.XCTestCase
-
-final class GetAllNotesUseCaseTests: XCTestCase {
+final class GetAllNotesUseCaseTests: NotesTestCase {
     private var sut: GetAllNotesUseCase!
     private var gateway: GetAllNotesGatewayStub!
     private var presenter: GetAllNotesUseCasePresenterSpy!
@@ -17,18 +15,18 @@ final class GetAllNotesUseCaseTests: XCTestCase {
     func testHasToShowFeedbackOnGetFailure() {
         gateway.returnError()
         sut.run()
-        wait(for: [presenter.invokedShowFeedback], timeout: 0.1)
+        expect(presenter.invokedShowFeedback)
     }
 
     func testHasToShowNotesListOnGetSuccess() {
         gateway.returnMock()
         sut.run()
-        wait(for: [presenter.invokedListNotes], timeout: 0.1)
+        expect(presenter.invokedListNotes)
     }
 
     func testHasToShowEmptyStateOnGetEmptyList() {
         gateway.returnEmpty()
         sut.run()
-        wait(for: [presenter.invokedShowEmptyState], timeout: 0.1)
+        expect(presenter.invokedShowEmptyState)
     }
 }
