@@ -13,5 +13,9 @@ comment:
   behavior: default
 
 ignore:
-  - "NotesAppTests/**/*"
   - "NotesAppTests/*"
+  - "NotesAppTests/**/*"
+  - "NotesAppUITests/*"
+  - "NotesAppUITests/**/*"
+  - "NotesAppTestUtils/*"
+  - "NotesAppTestUtils/**/*"

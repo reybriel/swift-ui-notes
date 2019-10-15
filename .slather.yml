@@ -4,3 +4,5 @@ scheme: NotesApp
 output_directory: slather_report
 ignore:
   - NotesAppTests/*
+  - NotesAppUITests/*
+  - NotesAppTestUtils/*
