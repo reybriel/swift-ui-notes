@@ -33,12 +33,7 @@ final class NotesDAO {
     // MARK: Properties
     typealias SortingKey = NoteSortingKey
 
-    #if TEST
-    static let shared: NotesDAO = .init(persistentContainerName: "ReleaseContainer")
-    #else
-    static let shared: NotesDAO = .init(persistentContainerName: "TestContainer")
-    #endif
-
+    static let shared: NotesDAO = .init(persistentContainerName: "NotesModel")
     let didChange: PassthroughSubject<Void, Never> = .init()
     private let persistentContainer: NSPersistentContainer
 
