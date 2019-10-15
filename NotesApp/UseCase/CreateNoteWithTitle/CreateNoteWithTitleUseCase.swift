@@ -7,18 +7,17 @@ struct CreateNoteWithTitleUseCase: CanRun {
     let title: String
     unowned let presenter: CreateNoteWithTitleUseCasePresenter & AnyObject
     unowned let gateway: CreateNoteWithTitleGateway
-    
+
     func run() {
         if title.isEmpty {
             presenter.show(feedback: .attemptToCreateNoteWithoutTitle)
         } else {
-            createNoteSaveUpstream()
+            saveNote()
         }
     }
-    
-    @discardableResult
-    private func createNoteSaveUpstream() -> AnyCancellable {
-        Future(createNote)
+
+    private func saveNote() {
+        let _ = gateway.createSaveUpstream(noteTitle: title)
             .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: { event in
                 if case .failure(_) = event {
@@ -26,18 +25,6 @@ struct CreateNoteWithTitleUseCase: CanRun {
                 }
             }, receiveValue: {
                 self.presenter.showSuccess()
-            })
-    }
-
-    private func createNote(completion: @escaping (Result<Void, Error>) -> Void) {
-        let _ = gateway.createSaveUpstream(noteTitle: title)
-            .receive(on: DispatchQueue.main)
-            .sink(receiveCompletion: { event in
-                if case let .failure(error) = event {
-                    completion(.failure(error))
-                }
-            }, receiveValue: {
-                completion(.success(()))
             })
     }
 }
