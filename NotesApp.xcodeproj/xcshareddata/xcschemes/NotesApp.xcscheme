@@ -53,6 +53,16 @@
                referenceType = "1">
             </LocationScenarioReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "16059DF72355D9970076035B"
+               BuildableName = "NotesAppUITests.xctest"
+               BlueprintName = "NotesAppUITests"
+               ReferencedContainer = "container:NotesApp.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
