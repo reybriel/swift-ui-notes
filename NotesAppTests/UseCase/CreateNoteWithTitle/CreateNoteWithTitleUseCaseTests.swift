@@ -18,6 +18,13 @@ final class CreateNoteWithTitleUseCaseTests: NotesTestCase {
         expect(presenter.invokedShowFeedback)
     }
 
+    func testHasToShowFeedbackOnTryCreatingWithEmptyTitle() {
+        sut = CreateNoteWithTitleUseCase(title: "", presenter: presenter, gateway: gateway)
+        sut.run()
+        expect(presenter.invokedShowFeedback, tolerance: 0.0)
+        expect(presenter.lastGivenAlertFeedback == AlertFeedback.attemptToCreateNoteWithoutTitle)
+    }
+
     func testHasToShowSuccessOnCreateSuccess() {
         gateway.returnSuccess()
         sut.run()
